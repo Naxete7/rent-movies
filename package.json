@@ -13,16 +13,26 @@
     "API",
     "GeeksHubs"
   ],
-  "author": "Jose Marin",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
-    "express": "^4.17.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "morgan": "^1.10.0",
-    "mysql2": "^2.3.2",
-    "nodemon": "^2.0.14",
-    "sequelize": "^6.8.0",
-    "sequelize-cli": "^6.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.25.5",
+    "sequelize-cli": "^6.5.2",
     "winston": "^3.3.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naxete7/rent-movies.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Naxete7/rent-movies/issues"
+  },
+  "homepage": "https://github.com/Naxete7/rent-movies#readme"
 }

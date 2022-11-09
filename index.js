@@ -6,7 +6,7 @@ const db = require('./db.js');
 const router = require('./router.js');
 
 const app = express();
-const PORT = process.env.PORT || 3000; //Configuramos puerto heroku
+const PORT = process.env.PORT || 3005; //Configuramos puerto heroku
 
 //Middleware
 app.use(morgan('combined', { stream: logger.stream }));

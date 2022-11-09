@@ -1,6 +1,6 @@
 'use strict';
 const {Model} = require('sequelize');
-const category = require('./category');
+const category = require('./article');
 module.exports = (sequelize, DataTypes) => {
   class movie extends Model {
     /**
@@ -10,14 +10,22 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      movie.belongsTo(models.category, {
-        foreignKey: 'categoryId'
+      movie.belongsTo(models.rent, {
+        foreignKey: 'articleId'
       });
     }
   };
   movie.init({
     title: DataTypes.STRING,
-    categoryId: DataTypes.INTEGER
+     genre: DataTypes.STRING,
+    date: DataTypes.DATE,
+    poster: {
+           type: DataTypes.STRING,
+          len: [1, 300],
+            },
+    rank: DataTypes.INTEGER,
+    articleId: DataTypes.INTEGER
+
   }, {
     sequelize,
     modelName: 'movie',
