@@ -14,7 +14,10 @@ module.exports = {
           poster: "	https://www.themoviedb.org/t/p/w1280/7yMFXciYDcMle8BjbCsrZ8aqHtw.jpg",
           rank: 10,
           cinema: true,
-          theater: false,
+        theater: false,
+        articleId: 5,
+          createdAt: new Date(),
+          updatedAt: new Date()
   
       },
          {
@@ -26,6 +29,9 @@ module.exports = {
         rank: 10,
         cinema: true,
         theater: false,
+        articleId: 5,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
             {
        title: 'Castle',
@@ -36,6 +42,9 @@ module.exports = {
       rank: 6,
       cinema: false,
       theater: false,
+      articleId: 4,
+      createdAt: new Date(),
+          updatedAt: new Date()
       },
                {
         title: 'Mentes Criminales',
@@ -46,6 +55,9 @@ module.exports = {
         rank: 8,
         cinema: false,
         theater: false,
+        articleId: 4,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
                   {
         title: 'Supergol',
@@ -55,7 +67,10 @@ module.exports = {
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/n4KLsqSXBLsR72gklIVDem1jvpD.jpg",
         rank: 7,
         cinema: false,
-        theater: false,
+         theater: false,
+         articleId: 5,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
                      {
         title: 'Los Caballeros del Zodiaco',
@@ -65,7 +80,10 @@ module.exports = {
         poster: "	https://www.themoviedb.org/t/p/w600_and_h900_bestv2/rYp2lHcM5rsdEdzuYA56lk7xBDr.jpg",
         rank: 6,
        cinema: false,
-        theater: false
+        theater: false,
+       articleId: 5,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
                         {
         title: 'La casa de papel',
@@ -76,6 +94,9 @@ module.exports = {
         rank: 9,
         cinema: true,
         theater: false,
+        articleId: 4,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
                            {
         title: 'Dartacan y los tres mosqueperros',
@@ -86,6 +107,9 @@ module.exports = {
         rank: 6,
         cinema: false,
         theater: false,
+        articleId: 5,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
                               {
         title: 'Campeones: Oliver y Benji',
@@ -96,6 +120,9 @@ module.exports = {
         rank: 9,
         cinema: true,
         theater: false,
+         articleId: 5,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
                                  {
         title: 'Musculman',
@@ -106,6 +133,9 @@ module.exports = {
         rank: 7,
         cinema: false,
         theater: false,
+        articleId: 5,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
                                     {
          title: 'He-man y los Masters del Universo',
@@ -115,7 +145,10 @@ module.exports = {
         poster: "https://www.themoviedb.org/t/p/w1280/g2thtQ6q0A9zVT8waPaECNO6XuD.jpg",
          rank: 9,
         cinema: true,
-        theater: false,
+          theater: false,
+          articleId: 5,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
                                        {
          title: 'Los Trotamúsicos',
@@ -126,6 +159,9 @@ module.exports = {
         rank: 9,
         cinema: false,
         theater: true,
+         articleId: 5,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
            {
         title: 'Juego de tronos',
@@ -136,6 +172,9 @@ module.exports = {
         rank: 8,
         cinema: false,
         theater: false,
+        articleId: 7,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
          {
         title: 'La que se avecina',
@@ -146,6 +185,9 @@ module.exports = {
         rank: 9,
         cinema: true,
         theater: false,
+        articleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
    
   

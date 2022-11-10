@@ -15,19 +15,19 @@ module.exports = {
       episode_7_days: {
                 type: Sequelize.BOOLEAN
             },
-            episodes: {
+      episodes: {
                 type: Sequelize.INTEGER
             },
-            seasons: {
+      seasons: {
                 type: Sequelize.INTEGER
             },
-            poster: {
+      poster: {
                 type: Sequelize.STRING,
             },
-            rank: {
-                type: Sequelize.FLOAT
+      rank: {
+                type: Sequelize.INTEGER
             },
-            cinema: {
+      cinema: {
                 type: Sequelize.BOOLEAN
             },
       theater: {

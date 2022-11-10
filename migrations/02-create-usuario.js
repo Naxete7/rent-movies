@@ -18,7 +18,7 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
-      pasword: {
+      password: {
         type: Sequelize.STRING
       },
       rolId: {
@@ -28,13 +28,13 @@ module.exports = {
           key: 'id'
         },
         createdAt: {
-          allowNull: false,
-          type: Sequelize.DATE
-        },
-        updatedAt: {
-          allowNull: false,
-          type: Sequelize.DATE
-        }
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
       },
     });
   },
