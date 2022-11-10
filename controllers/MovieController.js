@@ -3,7 +3,7 @@ const db = require("../models");
 const movies = db.movie;
 const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
 
-var categoryModel  = require('../models').category;  //Add for dependency response
+var articleModel  = require('../models').article;  //Add for dependency response
 
 const MovieController = {}; //Create the object controller
 
@@ -14,7 +14,7 @@ const MovieController = {}; //Create the object controller
 //GET all movies from database
 MovieController.getAll = (req, res) => {
     
-    movies.findAll({include: [{ model:categoryModel}]})
+    movies.findAll({include: [{ model:articleModel}]})
       .then(data => {
         res.send(data);
       })
@@ -32,7 +32,7 @@ MovieController.getAll = (req, res) => {
 MovieController.getById = (req, res) => {
     const id = req.params.id;
 
-    movies.findByPk(id, {include: [{ model:categoryModel}]})
+    movies.findByPk(id, {include: [{ model:articleModel}]})
       .then(data => {
         if (data) {
           res.send(data);
@@ -65,7 +65,7 @@ MovieController.create = (req, res) => {
     // Create a Movies
     const newMovie = {
       title: req.body.title,
-      categoryId: req.body.categoryId
+      categoryId: req.body.articleId
     };
   
     // Save Movies in the database
