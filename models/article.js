@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.serie,{
         foreignKey:'articleId'
       });
-      article.belongsToMany(models.rent, { through: 'rentarticles', foreignKey: 'id_articles' })
+      article.belongsToMany(models.rent, { through: 'rentarticle', foreignKey: 'articleId' })
     }
   };
   category.init({

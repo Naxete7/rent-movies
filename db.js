@@ -19,7 +19,7 @@ const sequelize = new Sequelize(
     }
 );
 
-module.exports = sequelize.authenticate()
+module.exports = sequelize.sync({force:true})
 .then((db)=>{
     console.log('MYSQL connected'); 
     return db;

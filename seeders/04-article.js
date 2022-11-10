@@ -8,31 +8,38 @@ module.exports = {
       
       {
         type: 'comedia',
-       age: 8
+        age: 8,
+       rentId:1
       },
       {
         type: 'musical',
-       age: 8
+        age: 8,
+        rentId:3
       },
       {
         type: 'drama',
-       age: 18
+        age: 18,
+       rentId:5
       },
       {
         type: 'acción',
-       age: 18
+        age: 18,
+       rentId:7
       },
       {
         type: 'animación',
-       age: 3
+        age: 3,
+       rentId:2
       },
       {
         type: 'aventuras',
-       age: 12
+        age: 12,
+       rentId:4
       },
        {
         type: 'ciencia ficción',
-       age: 12
+         age: 12
+       ,rentId:6
       },
 
 

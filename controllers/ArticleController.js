@@ -1,26 +1,27 @@
 //Importo modelo de datos
 const db = require("../models");
+const article = require("../models/article");
 const category = db.category;
 const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
 
-const CategoryController = {}; //Create the object controller
+const ArticleController = {}; //Create the object controller
 
 
 //CRUD end-points Functions
 //-------------------------------------------------------------------------------------
 //GET all categories from database
-CategoryController.getAll = (req, res) => {
+ArticleController.getAll = (req, res) => {
     const type = req.query.type;
     var condition = type ? { type: { [Op.like]: `%${type}%` } } : null;
   
-    category.findAll({ where: condition })
+    article.findAll({ where: condition })
       .then(data => {
         res.send(data);
       })
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving categories."
+            err.message || "Se produjo un error al recuperar los artículos."
         });
       });
   };
@@ -28,146 +29,146 @@ CategoryController.getAll = (req, res) => {
 
 //-------------------------------------------------------------------------------------
 //GET categories by Id from database
-CategoryController.getById = (req, res) => {
+ArticleController.getById = (req, res) => {
     const id = req.params.id;
   
-    category.findByPk(id)
+    article.findByPk(id)
       .then(data => {
         if (data) {
           res.send(data);
         } else {
           res.status(404).send({
-            message: `Cannot find Category with id=${id}.`
+            message: `No se ha encontrado ningun artículo con el id=${id}.`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error retrieving categories with id=" + id
+          message: "Error al recuperar los articulos con id=" + id
         });
       });
   };
 
 
 //-------------------------------------------------------------------------------------
-//CREATE a new category in database
-CategoryController.create = (req, res) => {
-    // Validate request
+//CREATE un nuevo articulo en la base de datos
+ArticleController.create = (req, res) => {
+    
     if (!req.body.type) {
       res.status(400).send({
-        message: "Content can not be empty!"
+        message: "El contenido no puede estar vacío!"
       });
       return;
     }
   
-    // Create a Category
-    const newCategory = {
+    // Create un articulo
+    const newArticle = {
       type: req.body.type,
       age: req.body.age
     };
   
-    // Save Category in the database
-    category.create(newCategory)
+    //Guardar un articulo en la base de datos
+    article.create(newArticle)
       .then(data => {
         res.send(data);
       })
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while creating the newCategory."
+            err.message || "Se produjo un error al crear el nuevo artículo."
         });
       });
   };
 
 
 //-------------------------------------------------------------------------------------
-//UPDATE a category from database
-CategoryController.update = (req, res) => {
+//UPDATE un articulo de la base de datos
+ArticleController.update = (req, res) => {
     const id = req.params.id;
   
-    category.update(req.body, {
+    article.update(req.body, {
       where: { id: id }
     })
       .then(num => {
         if (num == 1) {
           res.send({
-            message: "Category was updated successfully."
+            message: "El artículo se ha modificado correctamente."
           });
         } else {
           res.send({
-            message: `Cannot update Category with id=${id}. Maybe Movie was not found or req.body is empty!`
+            message: `No se puede modificar el artículo con id=${id}. Tal vez no se encontró la película o req.body está vacío!`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error updating Category with id=" + id
+          message: "Error al actualizar el artículo con el id=" + id
         });
       });
   };
 
 
 //-------------------------------------------------------------------------------------
-//GET categories by Type from database  
+//GET articulos por tipo desde la base de datos  
 //FindByType
-CategoryController.getByType = (req, res) => {
-    category.findAll({ where: { type: req.params.type } })
+ArticleController.getByType = (req, res) => {
+    article.findAll({ where: { type: req.params.type } })
       .then(data => {
         res.send(data);
       })
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving categories."
+            err.message || "Se produjo un error al recuperar los artículos."
         });
       });
   };
 
 
 //-------------------------------------------------------------------------------------
-//DELETE a category by Id from database
-CategoryController.delete = (req, res) => {
+//DELETE un artículo por Id desde la base de datos
+ArticleController.delete = (req, res) => {
     const id = req.params.id;
   
-    category.destroy({
+    article.destroy({
       where: { id: id }
     })
       .then(num => {
         if (num == 1) {
           res.send({
-            message: "Category was deleted successfully!"
+            message: "El artículo fue borrado satisfactoriamente!"
           });
         } else {
           res.send({
-            message: `Cannot delete Category with id=${id}. Maybe Movie was not found!`
+            message: `No se ha podido borrar el artículo con el id=${id}. Quizas la película no exista!`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Could not delete Category with id=" + id
+          message: "No se pudo eliminar el artículo con id=" + id
         });
       });
   };
 
 
 //-------------------------------------------------------------------------------------
-//DELETE all categories from database
+//DELETE todos los articulos de la base de datos
 //delete all categories   
-CategoryController.deleteAll = (req, res) => {
-    category.destroy({
+ArticleController.deleteAll = (req, res) => {
+    article.destroy({
       where: {},
       truncate: false
     })
       .then(nums => {
-        res.send({ message: `${nums} categories were deleted successfully!` });
+        res.send({ message: `${nums} articulos han sido borrados satisfactoriamente!` });
       })
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while removing all categories."
+            err.message || "Se produjo un error al eliminar todas los artículos."
         });
       });
   };
 
-module.exports = CategoryController;
+module.exports = ArticleController;
