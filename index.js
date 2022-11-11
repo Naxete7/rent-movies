@@ -14,7 +14,7 @@ app.use(express.json());
 
 //Rutas
 app.get('/', (req, res) => {res.send('Bienvenidos a Express');});
-//app.use(router);
+app.use(router);
 
 //Connecting to the database
 db.then(()=>{

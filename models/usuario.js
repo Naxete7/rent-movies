@@ -22,9 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     pasword: DataTypes.STRING,
     rolId: {
-      type: sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
-        model: 'rols',
+        model: 'rol',
         key: 'id'
       },
     },

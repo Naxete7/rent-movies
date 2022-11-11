@@ -11,16 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      rent.belongsToMany(models.articles(models.articles,
-        {
-        through: 'rent_articles',
-        foreignKey: 'id_rent'
-      }));
+      rent.belongsToMany(models.article, { through: 'rentarticle', foreignKey: 'rentId' });
             rent.belongsTo(models.usuario);
     }
   }
   rent.init({
-    date: DataTypes.DATE
+    type: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'rent',
