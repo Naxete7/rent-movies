@@ -1,9 +1,9 @@
 //Importo modelo de datos
 const db = require("../models");
-//const movies = db.movie;
-//const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
+const movies = db.movie;
+const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
 
-//var articleModel  = require('../models').article;  //Add for dependency response
+var articleModel  = require('../models').article;  //Add for dependency response
 
 const MovieController = {}; //Create the object controller
 
@@ -11,7 +11,7 @@ const MovieController = {}; //Create the object controller
 
 //CRUD end-points Functions
 //-------------------------------------------------------------------------------------
-//GET all movies from database
+//GET todas las peliculas de la base de datos
 MovieController.getAll = (req, res) => {
     
     movies.findAll({include: [{ model:articleModel}]})
@@ -21,14 +21,14 @@ MovieController.getAll = (req, res) => {
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving movies."
+            err.message || "Se produjo un error al recuperar películas."
         });
       });
   };
 
 
 //-------------------------------------------------------------------------------------
-//GET movies by Id from database
+//GET películas por Id de la db
 MovieController.getById = (req, res) => {
     const id = req.params.id;
 
@@ -38,13 +38,13 @@ MovieController.getById = (req, res) => {
           res.send(data);
         } else {
           res.status(404).send({
-            message: `Cannot find Tutorial with id=${id}.`
+            message: `No se puede encontrar una pelicula con el id=${id}.`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error retrieving movies with id=" + id
+          message: "Error al recuperar peliculas con el id=" + id
         });
       });
   };
@@ -52,23 +52,23 @@ MovieController.getById = (req, res) => {
 
 
 //-------------------------------------------------------------------------------------
-//CREATE a new movie in database
+//CREATE una nueva película en la base de datos
 MovieController.create = (req, res) => {
-      // Validate request
+      
   if (!req.body.title) {
     res.status(400).send({
-      message: "Content can not be empty!"
+      message: "El contenido no puede estar vacío!"
     });
     return;
   }
   
-      // Create a Movies
+      // Crear películas
       const newMovie = {
         title: req.body.title,
         categoryId: req.body.articleId
       };
   
-      // Save Movies in the database
+      // Guardar peliculas en la db
       movies.create(newMovie)
         .then(data => {
           res.send(data);
@@ -76,14 +76,14 @@ MovieController.create = (req, res) => {
         .catch(err => {
           res.status(500).send({
             message:
-              err.message || "Some error occurred while creating the Movie."
+              err.message || "Ocurrió un error al crear la película."
           });
         });
     };
 
 
   //-------------------------------------------------------------------------------------
-  //UPDATE a movie from database
+  //UPDATE una peli de la base de datos
   MovieController.update = (req, res) => {
       const id = req.params.id;
   
@@ -93,25 +93,25 @@ MovieController.create = (req, res) => {
         .then(num => {
           if (num == 1) {
             res.send({
-              message: "Movie was updated successfully."
+              message: "La película ha sido modificada con exito."
             });
           } else {
             res.send({
-              message: `Cannot update Movie with id=${id}. Maybe Movie was not found or req.body is empty!`
+              message: `No se puede modificar la película con el  id=${id}. Quizas la película no existe!`
             });
           }
         })
         .catch(err => {
           res.status(500).send({
-            message: "Error updating Movie with id=" + id
+            message: "Error al modificar la pleícula con el id=" + id
           });
         });
     };
 
 
   //-------------------------------------------------------------------------------------
-  //GET movie by Title from database 
-  //FindByTitle
+  //GET película por titulo de la db
+  
     MovieController.getByTitle = (req, res) => {
       movies.findAll({ where: { title: req.params.title } })
         .then(data => {
@@ -120,14 +120,14 @@ MovieController.create = (req, res) => {
         .catch(err => {
           res.status(500).send({
             message:
-              err.message || "Some error occurred while retrieving tutorials."
+              err.message || "Se produjo un error al recuperar los tutoriales."
           });
         });
     };
 
 
   //-------------------------------------------------------------------------------------
-  //DELETE a movie by Id from database
+  //DELETE una película de la base de datos por el id
   MovieController.delete = (req, res) => {
       const id = req.params.id;
   
@@ -137,37 +137,37 @@ MovieController.create = (req, res) => {
         .then(num => {
           if (num == 1) {
             res.send({
-              message: "Movie was deleted successfully!"
+              message: "La película ha sido borrada con éxito!"
             });
           } else {
             res.send({
-              message: `Cannot delete Movie with id=${id}. Maybe Movie was not found!`
+              message: `No se puede borrar la película con el id=${id}.Quizas la película no existe!`
             });
           }
         })
         .catch(err => {
           res.status(500).send({
-            message: "Could not delete Movie with id=" + id
+            message: "No se puede borrar la película con el id=" + id
           });
         });
     };
 
 
   //-------------------------------------------------------------------------------------
-  //DELETE all movies from database
-  //delete all movies 
+  //DELETE todas las peliculas de la base de datos
+ 
     MovieController.deleteAll = (req, res) => {
       movies.destroy({
         where: {},
         truncate: false
       })
         .then(nums => {
-          res.send({ message: `${nums} Movies were deleted successfully!` });
+          res.send({ message: `${nums} películas han sido borradas con exito!` });
         })
         .catch(err => {
           res.status(500).send({
             message:
-              err.message || "Some error occurred while removing all movies."
+              err.message || "Se produjo un error al eliminar todas las películas."
           });
         });
     };

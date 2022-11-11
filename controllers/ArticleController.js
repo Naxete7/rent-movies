@@ -1,6 +1,6 @@
 //Importo modelo de datos
 const db = require("../models");
-const article = require("../models/article");
+//const article = require("../models/article");
 const article = db.article;
 const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
 
