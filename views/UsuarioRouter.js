@@ -1,7 +1,19 @@
-const db = require("../models");
-const usuario = db.usuario;
-const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
+const express = require('express');
+const router = express.Router();
+const models = require('../models/index')
 
-var usuarioModel  = require('../models').usuario;  //Add for dependency response
+//Importo modelo de datos
+const UsuarioController = require('../controllers/UsuarioController');
 
-const usuarioController = {}; //Create the object controller
+// Mostrar usuarios por mail
+router.get("/user/:mail", isValidUser(), UsuarioController.getUserByMail);
+
+// Modificar usuario
+router.patch('/updateUser/:mail', isValidUser(), UsuarioController.updateUser);
+
+//Borrar usuario(solo puede hacerlo el admin)
+router.delete('/deleteUser/:mail', isValidRole("admin"), UsuarioController.deleteUser)
+
+
+
+module.exports = router;

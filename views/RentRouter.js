@@ -1,7 +1,21 @@
-const db = require("../models");
-const rent = db.rent;
-const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
+const express = require('express');
+const router = express.Router();
+const models = require('../models/index')
 
-var rentModel  = require('../models').rent;  //Add for dependency response
+//Importo modelo de datos
+const RentController = require('../controllers/RentController');
 
-const rentController = {}; //Create the object controller
+
+//Alquilar una película
+router.post('/movie', isValidUser(), RentControllers.RentMovie)
+
+//Alquilar una serie
+router.post('/serie', isValidUser(), RentControllers.RentSerie)
+
+//Alquileres de un usuario
+router.get('/rent/mail', RentController.getRentByUser)
+
+//Todos los Alquileres solo administrados
+router.get('/', isValidRole("admin"), RentControllers.getAll)
+
+module.exports = router;
