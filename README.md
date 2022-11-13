@@ -45,18 +45,25 @@ Aquí podemos ver un ejemplo de los datos que hemos introducido a traves de los 
 Una vez ya completa la base de datos comenzaremos a realizar los ENDPOINTS, los cuales nos ayudaran a realizar las consultas que queramos en nuestra base de datos.
 Para ello crearemos un archivo router.js, que será donde crearemos una ruta para cada una de las tablas de la base de datos a las que queramos acceder
 
-![Captura de pantalla 2022-11-06 223754](https://user-images.githubusercontent.com/109297564/200196597-7ffbb58d-54c1-4ece-8e23-06bb94b0d93c.jpg)
+![Captura de pantalla 2022-11-13 120705](https://user-images.githubusercontent.com/109297564/201518669-31153f8b-7d17-4e14-9ea4-21e4c47eb1ec.jpg)
+
 
 Para lograr acceder a a estas rutas, crearemos una carpeta de views donde estaran los archivos que gestionaran las rutas y los endpoints que apuntan a estas rutas.
 
-![Captura de pantalla 2022-11-06 224156](https://user-images.githubusercontent.com/109297564/200196742-00a12c84-3cb8-4ece-bd9f-15b650bba5fa.jpg)
+![Captura de pantalla 2022-11-13 120756](https://user-images.githubusercontent.com/109297564/201518666-9ac5f627-1f91-48c6-a997-462564b5b3b7.jpg)
+
 
 Y para que tanto el archivo router.js como los views funcionen, tenemos qque crear las funciones de cada endpoint, y para ello crearemos los controllers, donde crearemos un archivo para cada tabla en la que queramos buscar(movies, series, usuario...)
 
-![Captura de pantalla 2022-11-06 224408](https://user-images.githubusercontent.com/109297564/200196855-36f68492-f417-471e-b250-d336fe041920.jpg)
+![Captura de pantalla 2022-11-13 120814](https://user-images.githubusercontent.com/109297564/201518665-5390d9fd-0128-4c9d-9f1b-cc4783c5ee8d.jpg)
+
 
 Una vez ya realizado todo esto y para comprobar que nuestra base de datos funciona correctamente, y podemos utilizar los endpoints para buscar lo que queramos utilizaremos el programa Postman para realizar esas consultas.
 
 ![Captura de pantalla 2022-11-06 194411](https://user-images.githubusercontent.com/109297564/200196983-6de91375-5281-4e07-8437-02bf247e862f.jpg)
 
 Por ultimo y para finalizar el proyecto, utilizaremos la pagina railway, para subir nustra base de datos en producción y asi poder acceder a ella con facilidad.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d4a1c2ea9e9729250c1087cec156626d64010f5
