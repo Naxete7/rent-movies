@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const models = require('../models/index')
 
-//const db = require('../db/db');
+const db = require('../db/db');
 //Importo modelo de datos
 const MovieController = require('../controllers/MovieController');
 
