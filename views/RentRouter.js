@@ -4,4 +4,4 @@ const Op = db.Sequelize.Op; //Import all ORM sequelize functions
 
 var rentModel  = require('../models').rent;  //Add for dependency response
 
-const RentController = {}; //Create the object controller
+const rentController = {}; //Create the object controller
