@@ -17,8 +17,6 @@ module.exports = (sequelize, DataTypes) => {
   };
   movie.init({
     title: DataTypes.STRING,
-     genre: DataTypes.STRING,
-    date: DataTypes.DATE,
     poster: {
            type: DataTypes.STRING,
           len: [1, 300],

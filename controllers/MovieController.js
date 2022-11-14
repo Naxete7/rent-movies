@@ -1,11 +1,11 @@
 //Importo modelo de datos
 const db = require("../models");
-const movies = db.movie;
-const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
+const movie = db.movie;
+const Op = db.Sequelize.Op;  
 
-var articleModel  = require('../models').article;  //Add for dependency response
+var articleModel = require('../models').article;  
 
-const MovieController = {}; //Create the object controller
+const MovieController = {}; 
 
 
 
@@ -14,7 +14,7 @@ const MovieController = {}; //Create the object controller
 //GET todas las peliculas de la base de datos
 MovieController.getAll = (req, res) => {
     
-    movies.findAll({include: [{ model:articleModel}]})
+    movie.findAll({include: [{ model:articleModel}]})
       .then(data => {
         res.send(data);
       })
@@ -32,7 +32,7 @@ MovieController.getAll = (req, res) => {
 MovieController.getById = (req, res) => {
     const id = req.params.id;
 
-    movies.findByPk(id, {include: [{ model:articleModel}]})
+    movie.findByPk(id, {include: [{ model:articleModel}]})
       .then(data => {
         if (data) {
           res.send(data);
@@ -69,7 +69,7 @@ MovieController.create = (req, res) => {
       };
   
       // Guardar peliculas en la db
-      movies.create(newMovie)
+      movie.create(newMovie)
         .then(data => {
           res.send(data);
         })
@@ -87,7 +87,7 @@ MovieController.create = (req, res) => {
   MovieController.update = (req, res) => {
       const id = req.params.id;
   
-      movies.update(req.body, {
+      movie.update(req.body, {
         where: { id: id }
       })
         .then(num => {
@@ -113,7 +113,7 @@ MovieController.create = (req, res) => {
   //GET película por titulo de la db
   
     MovieController.getByTitle = (req, res) => {
-      movies.findAll({ where: { title: req.params.title } })
+      movie.findAll({ where: { title: req.params.title } })
         .then(data => {
           res.send(data);
         })
@@ -123,7 +123,22 @@ MovieController.create = (req, res) => {
               err.message || "Se produjo un error al recuperar las peliculas"
           });
         });
-    };
+};
+    
+//-------------------------------------------------------------------------------------
+  //GET película por ranking de la db
+MovieController.getByRank = (req, res) => {
+  movie.findAll({ where: { rank: req.params.rank } })
+  .then(data => {
+    res.send(data);
+  })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Se produjo un error al buscar las peliculas mejor valoradas"
+      });
+    });
+}
 
 
   //-------------------------------------------------------------------------------------
@@ -131,7 +146,7 @@ MovieController.create = (req, res) => {
   MovieController.delete = (req, res) => {
       const id = req.params.id;
   
-      movies.destroy({
+      movie.destroy({
         where: { id: id }
       })
         .then(num => {
@@ -157,7 +172,7 @@ MovieController.create = (req, res) => {
   //DELETE todas las peliculas de la base de datos
  
     MovieController.deleteAll = (req, res) => {
-      movies.destroy({
+      movie.destroy({
         where: {},
         truncate: false
       })

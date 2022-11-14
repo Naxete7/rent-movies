@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+//Importo modelo de datos
 const SerieController = require('../controllers/SerieController');
 
 // End-points CRUD series

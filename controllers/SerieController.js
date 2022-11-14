@@ -1,12 +1,12 @@
 //Importo modelo de datos
 const db = require("../models");
 const serie = db.serie;
-const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
+const Op = db.Sequelize.Op; 
 
 
 var articleModel = require('../models').article;
 
-const SerieController = {}; //Create the object controller
+const SerieController = {}; 
 
 
 
@@ -131,7 +131,7 @@ SerieController.getTopSerie = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Se produjo un error al buscar las peliculas mejor valoradas"
+          err.message || "Se produjo un error al buscar las series mejor valoradas"
       });
     });
 }
