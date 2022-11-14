@@ -122,18 +122,72 @@ SerieController.create = (req, res) => {
     };
  //-------------------------------------------------------------------------------------
   //GET serie mejor valoradas de la db
+
 SerieController.getTopSerie = (req, res) => {
-  
-
-
-
-
-
-  
+  serie.findAll({ where: { rank: req.params.rank } })
+  .then(data => {
+    res.send(data);
+  })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Se produjo un error al buscar las peliculas mejor valoradas"
+      });
+    });
 }
+//-------------------------------------------------------------------------------------
+  //GET serie con capitulos en el cine
+
+SerieController.getSerieCinema = (req, res) => {
+    
+  serie.findAll({
+    where: { cinema: req.params.cinema }
+  })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Se produjo un error al buscar series con capitulos en el cine"
+      });
+    });
+  }
 
 
+  //-------------------------------------------------------------------------------------
+  //GET serie con capitulos en el teatro
+SerieController.getSerieTheater = (req, res) => {
+    
+  serie.findAll({
+    where: { theater: req.params.theater }
+  })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Se produjo un error al buscar series con capitulos en el teatro"
+      });
+    });
+  }
 
+
+SerieController.get7Days = (req, res) => {
+  serie.findAll({
+    where: { episode_7_days: req.params.espisode_7_days }
+  })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Se produjo un error al buscar series con un capitulo en los próximos 7 dias"
+      });
+    });
+}
 
 
 

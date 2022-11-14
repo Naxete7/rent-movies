@@ -7,9 +7,10 @@ const SerieController = require('../controllers/SerieController');
 router.get('/', SerieController.getAll);
 router.get('/:id', SerieController.getById);
 router.get('/nombre/:title', SerieController.getByTitle);
-//router.get('/rank', SerieController.getTopSerie);
-//router.get('/theater', SerieController.getSerieTheater);
-//router.get('/cinema', SerieController.getSerieCinema);
+router.get('/rank/:rank', SerieController.getTopSerie);
+router.get('/theater/:theater', SerieController.getSerieTheater);
+router.get('/cinema/:cinema', SerieController.getSerieCinema);
+router.get('/episode_7_days/:espisode_7_days', SerieController.get7Days)
 router.post('/', SerieController.create);
 router.put('/:id', SerieController.update);
 router.delete('/', SerieController.deleteAll);
