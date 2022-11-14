@@ -3,7 +3,6 @@ const db = require("../models");
 const serie = db.serie;
 const Op = db.Sequelize.Op; 
 
-
 var articleModel = require('../models').article;
 
 const SerieController = {}; 

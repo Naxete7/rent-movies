@@ -1,9 +1,9 @@
 const db = require("../models");
 const usuario = db.usuario;
-const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
-var usuarioModel  = require('../models').usuario;  //Add for dependency response
-const UsuarioController = {}; //Create the object controller
-
+const Op = db.Sequelize.Op; 
+const models = require("../models/index"); 
+const UsuarioController = {}; 
+const jsonwebtoken = require("jsonwebtoken");
 
 
 

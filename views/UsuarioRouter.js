@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const models = require('../models/index')
 
 //Importo modelo de datos
 const UsuarioController = require('../controllers/UsuarioController');
+
+
+//Crear nuevo usuario
+
 
 // Mostrar usuarios por mail
 router.get("/user/:mail", isValidUser(), UsuarioController.getUserByMail);
