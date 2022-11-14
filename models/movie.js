@@ -1,6 +1,6 @@
 'use strict';
 const {Model} = require('sequelize');
-const category = require('./article');
+const article = require('./article');
 module.exports = (sequelize, DataTypes) => {
   class movie extends Model {
     /**

@@ -65,7 +65,7 @@ MovieController.create = (req, res) => {
       // Crear películas
       const newMovie = {
         title: req.body.title,
-        categoryId: req.body.articleId
+        articleId: req.body.articleId
       };
   
       // Guardar peliculas en la db
@@ -120,7 +120,7 @@ MovieController.create = (req, res) => {
         .catch(err => {
           res.status(500).send({
             message:
-              err.message || "Se produjo un error al recuperar los tutoriales."
+              err.message || "Se produjo un error al recuperar las peliculas"
           });
         });
     };
