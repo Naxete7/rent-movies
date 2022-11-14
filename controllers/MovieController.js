@@ -8,7 +8,6 @@ var articleModel = require('../models').article;
 const MovieController = {}; 
 
 
-
 //CRUD end-points Functions
 //-------------------------------------------------------------------------------------
 //GET todas las peliculas de la base de datos

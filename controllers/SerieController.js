@@ -8,7 +8,7 @@ var articleModel = require('../models').article;
 const SerieController = {}; 
 
 
-
+//CRUD end-points Functions
 //GET todas las seires de la base de datos
 
 SerieController.getAll = (req, res) => {
