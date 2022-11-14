@@ -20,6 +20,9 @@ module.exports = {
           model: 'rents',
           key: 'id'
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+        
         createdAt: {
         allowNull: false,
         type: Sequelize.DATE

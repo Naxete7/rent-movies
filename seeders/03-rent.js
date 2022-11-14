@@ -8,36 +8,58 @@ module.exports = {
       
       {
         usuarioId: 1,
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
        {
-        usuarioId: 5,
+         usuarioId: 5,
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
        {
-        usuarioId: 7,
+         usuarioId: 7,
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
        {
-        usuarioId: 8,
+         usuarioId: 8,
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
        {
-        usuarioId: 11,
+         usuarioId: 11,
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
        {
-        usuarioId: 13,
+         usuarioId: 13,
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
        {
-        usuarioId: 2,
+         usuarioId: 2,
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
        {
-        usuarioId: 9,
+         usuarioId: 9,
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
        {
-        usuarioId: 10,
+         usuarioId: 10,
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
        {
-        usuarioId: 3,
+         usuarioId: 3,
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
        {
-        usuarioId: 5,
+         usuarioId: 5,
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
    
       ], {});

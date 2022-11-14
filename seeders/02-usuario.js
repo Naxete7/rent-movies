@@ -12,8 +12,8 @@ module.exports = {
         email: 'lugarpe@gmail.com',
         password: 'pegalu123',
          rolId: 1,
-        //createdAt: new Date(),
-        //  updatedAt: new Date()
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
         nombre: 'Pepe',
@@ -21,8 +21,8 @@ module.exports = {
          email: 'penalo@gmail.com',
         password: 'penalo123',
          rolId: 1,
-        //createdAt: new Date(),
-        //  updatedAt: new Date()
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
         nombre: 'Victor',
@@ -30,8 +30,8 @@ module.exports = {
         email: 'ninlleti@gmail.com',
         password: 'vigava93',
          rolId: 1,
-        //createdAt: new Date(),
-        //  updatedAt: new Date()
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
         nombre: 'Marina',
@@ -39,8 +39,8 @@ module.exports = {
         email: 'mavama@gmail.com',
         password: 'valero60',
          rolId: 1,
-        //createdAt: new Date(),
-        //  updatedAt: new Date()
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
          nombre: 'Laura',
@@ -48,8 +48,8 @@ module.exports = {
         email: 'labarxi@gmail.com',
         password: 'daniel15',
          rolId: 1,
-        //createdAt: new Date(),
-        //  updatedAt: new Date()
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
          nombre: 'Ignacio',
@@ -57,8 +57,8 @@ module.exports = {
         email: 'naxete7@gmail.com',
          password: 'xilxes77',
         rolId: 2,
-        // createdAt: new Date(),
-        //  updatedAt: new Date()
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
         nombre: 'Javier',
@@ -66,8 +66,8 @@ module.exports = {
         email: 'jafloma@hotmail.com',
         password: 'textturas',
          rolId: 1,
-        //createdAt: new Date(),
-        //  updatedAt: new Date()
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
          nombre: 'Susana',
@@ -75,8 +75,8 @@ module.exports = {
          email: 'susfm@hotmail.com',
         password: 'fallera09',
          rolId: 1,
-        //createdAt: new Date(),
-        //  updatedAt: new Date()
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
           nombre: 'Olivia',
@@ -84,8 +84,8 @@ module.exports = {
           email: 'ogaca@gmail.com',
         password: 'bebe123',
          rolId: 1,
-          //createdAt: new Date(),
-          //updatedAt: new Date()
+          createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
          nombre: 'Maite',
@@ -93,8 +93,8 @@ module.exports = {
           email: 'macamu80@gmail.com',
         password: 'olivia06',
          rolId: 2,
-        // createdAt: new Date(),
-        //  updatedAt: new Date()
+         createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
         nombre: 'Luis',
@@ -102,8 +102,8 @@ module.exports = {
         email: 'ludope@gmail.com',
         password: 'bernabeu93',
         rolId: 1,
-        //createdAt: new Date(),
-        //  updatedAt: new Date()
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
         nombre: 'Javier',
@@ -111,8 +111,8 @@ module.exports = {
         email: 'japons@gmail.com',
         password: 'ponsito90',
          rolId: 1,
-        //createdAt: new Date(),
-        //  updatedAt: new Date()
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
     {
         nombre: 'Leo',
@@ -120,8 +120,8 @@ module.exports = {
         email: 'goat@gmail.com',
       password: 'pbalondeoro',
        rolId: 2,
-        //createdAt: new Date(),
-        //  updatedAt: new Date()
+        createdAt: new Date(),
+          updatedAt: new Date()
       },
     
     ], {});

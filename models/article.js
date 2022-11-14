@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   article.init({
     type: DataTypes.STRING,
-    age: DataTypes.INTEGER
+    age: DataTypes.INTEGER,
+   rentId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'article',
