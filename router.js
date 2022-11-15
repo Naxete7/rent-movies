@@ -3,14 +3,15 @@ const router = require('express').Router();
 //Importamos Routes definidas en views
 const MovieRouter = require('./views/MovieRouter');
 const SerieRouter = require('./views/SerieRouter');
-//const UsuarioRouter = require('./views/UsuarioRouter');
+const UsuarioRouter = require('./views/UsuarioRouter');
 //const RentRouter = require('/views/RentRouter.js');
-
+const AuthRouter = require('./views/AuthRouter');
 
 //Rutas
 router.use('/movie', MovieRouter);
 router.use('/serie', SerieRouter);
-//router.use('/usuario', UsuarioRouter);
+router.use('/usuario', UsuarioRouter);
 //router.use('/rent', RentRouter);
+//router.use('/auth', AuthRouter);
 
 module.exports = router; 

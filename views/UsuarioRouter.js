@@ -5,17 +5,21 @@ const router = express.Router();
 const UsuarioController = require('../controllers/UsuarioController');
 
 
-//Crear nuevo usuario
 
+//Mostrar todos los usuarios
+router.get("/", UsuarioController.getAll);
+
+//Crear nuevo usuario
+router.post('/', UsuarioController.create);
 
 // Mostrar usuarios por mail
-router.get("/user/:mail", isValidUser(), UsuarioController.getUserByMail);
+router.get("/usuario/:email", UsuarioController.getUsuarioByEmail);
 
 // Modificar usuario
-router.patch('/updateUser/:mail', isValidUser(), UsuarioController.updateUser);
+//router.patch('/updateUsuario/:mail', isValidUsuario(), UsuarioController.updateUser);
 
 //Borrar usuario(solo puede hacerlo el admin)
-router.delete('/deleteUser/:mail', isValidRole("admin"), UsuarioController.deleteUser)
+//router.delete('/deleteUsuario/:mail', isValidRol("admin"), UsuarioController.deleteUser)
 
 
 

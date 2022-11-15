@@ -50,12 +50,110 @@ Para lograr acceder a a estas rutas, crearemos una carpeta de views donde estara
 
 ![Captura de pantalla 2022-11-13 120756](https://user-images.githubusercontent.com/109297564/201518666-9ac5f627-1f91-48c6-a997-462564b5b3b7.jpg)
 
-
 Y para que tanto el archivo router.js como los views funcionen, tenemos que crear las funciones de cada endpoint, y para ello crearemos los controllers, donde crearemos un archivo para cada tabla en la que queramos buscar(movies, series, usuario...)
 
 ![Captura de pantalla 2022-11-15 162854](https://user-images.githubusercontent.com/109297564/201958993-586ebfe7-6bd3-410b-a40c-338b13e1c0d0.jpg)
 
+ENDPOINTS REALIZADOS
 
+End-points CRUD para peliculas
+router.get('/', MovieController.getAll);
+Mostrar todas las películas
+
+router.get('/:id', MovieController.getById);
+Mostrar películas por Id
+
+router.get('/title/:title', MovieController.getByTitle);
+Mostrar películas por título
+
+router.get('/rank/:rank', MovieController.getByRank);
+Mostrar películas por ranking
+
+router.post('/', MovieController.create);
+Crear una película
+
+router.put('/:id', MovieController.update);
+Modificar una película
+
+router.delete('/', MovieController.deleteAll);
+Borrar todas las películas
+
+router.delete('/:id', MovieController.delete);
+Borrar una película
+
+// End-points CRUD para series
+router.get('/', SerieController.getAll);
+Mostrar todas las series
+
+router.get('/:id', SerieController.getById);
+Mostrar series por Id
+
+router.get('/nombre/:title', SerieController.getByTitle);
+Mostrar series por titulo
+
+router.get('/rank/:rank', SerieController.getTopSerie);
+Mostrar series por ranking
+
+router.get('/theater/:theater', SerieController.getSerieTheater);
+Mostrar series que se hayan hecho en el teatro
+
+router.get('/cinema/:cinema', SerieController.getSerieCinema);
+Mostrar series que se hayan hecho en el cine
+
+router.get('/episode_7_days/:espisode_7_days', SerieController.get7Days)
+Mostrar series que estrenen capítulo en los proximos 7 dias
+
+router.post('/', SerieController.create);
+Crear una serie
+
+router.put('/:id', SerieController.update);
+Modificar una serie
+
+router.delete('/', SerieController.deleteAll);
+Borrar todas las series
+
+router.delete('/:id', SerieController.delete);
+Borrar una serie
+
+ENDPOINTS de alquileres
+
+router.post('/movie', isValidUser(), RentController.RentMovie)
+Alquilar una película
+
+router.post('/serie', isValidUser(), RentController.RentSerie)
+Alquilar una serie
+
+router.put('/:id', isValidUser(), RentController.update)
+Modificar un pedido
+
+router.get('/rent/mail', RentController.getRentByUser)
+Alquileres de un usuario
+
+router.get('/', isValidRole("admin"), RentController.getAll)
+Todos los Alquileres solo administrados
+
+ENDPOINTS de los usuarios
+router.get("/", UsuarioController.getAll);
+Mostrar todos los usuarios
+
+router.post('/', UsuarioController.create);
+Crear nuevo usuario
+
+router.get("/usuario/:email", UsuarioController.getUsuarioByEmail);
+Mostrar usuarios por mail
+
+router.patch('/updateUsuario/:mail', isValidUsuario(), UsuarioController.updateUser);
+Modificar usuario
+
+router.delete('/deleteUsuario/:mail', isValidRol("admin"), UsuarioController.deleteUser)
+Borrar usuario(solo puede hacerlo el admin)
+
+ENDPOINTS de autentificación
+
+login y registro
+
+router.post('/signin', AuthController.signIn);
+router.post('/signup', AuthController.signUp);
 
 Una vez ya realizado todo esto y para comprobar que nuestra base de datos funciona correctamente, y podemos utilizar los endpoints para buscar lo que queramos utilizaremos el programa Postman para realizar esas consultas.
 
@@ -69,4 +167,3 @@ Para ello cambiaremos el archivo config.json poniendo el puerto, el host, y la d
 Y por último en estas dos imágenes vemos como quedaria nuestra base de datos en railway.
 ![Captura de pantalla 2022-11-15 163127](https://user-images.githubusercontent.com/109297564/201959930-72a3f41b-7ba2-4c3d-96e7-848622802ac2.jpg)
 ![Captura de pantalla 2022-11-15 163144](https://user-images.githubusercontent.com/109297564/201959942-f03648dd-bf2d-4d81-a759-b332ff5cbaa2.jpg)
-
