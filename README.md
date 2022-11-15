@@ -64,7 +64,9 @@ Una vez ya realizado todo esto y para comprobar que nuestra base de datos funcio
 Por ultimo y para finalizar el proyecto, utilizaremos la pagina railway, para subir nustra base de datos y asi poder acceder a ella con facilidad.
 Para ello cambiaremos el archivo config.json poniendo el puerto, el host, y la database que nos dara la pagina de Railway
 
-
 ![Captura de pantalla 2022-11-15 161957](https://user-images.githubusercontent.com/109297564/201957158-c758d57f-eb76-4aa0-95ad-7f39fd9831cd.jpg)
 
+Y por último en estas dos imágenes vemos como quedaria nuestra base de datos en railway.
+![Captura de pantalla 2022-11-15 163127](https://user-images.githubusercontent.com/109297564/201959930-72a3f41b-7ba2-4c3d-96e7-848622802ac2.jpg)
+![Captura de pantalla 2022-11-15 163144](https://user-images.githubusercontent.com/109297564/201959942-f03648dd-bf2d-4d81-a759-b332ff5cbaa2.jpg)
 
