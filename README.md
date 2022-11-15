@@ -13,9 +13,11 @@ npm i sequelize sequelize-cli mysql mysql2 express nodemon
 
 ![Captura de pantalla 2022-11-06 203948](https://user-images.githubusercontent.com/109297564/200196104-8712cf66-44a5-4c73-bc2f-1a75a8d3ee75.jpg)
 
-En primer lugar crearemos un index.js donde crearemos la base del proyectto y sera desde donde conectaremos con el servidor y con la base de datos
+![Captura de pantalla 2022-11-15 162305](https://user-images.githubusercontent.com/109297564/201957583-9e60c4b7-e450-457e-96c6-a947b0e72396.jpg)
+En esta última imagen podemos ver todas las dependencias instaladas para el correcto funcionamiento de nuestro proyecto.
 
-![Captura de pantalla 2022-11-06 220534](https://user-images.githubusercontent.com/109297564/200195437-175876bd-fe34-485d-b7e1-5e245c647b1a.jpg)
+En primer lugar crearemos un index.js donde crearemos la base del proyecto y será desde donde conectaremos con el servidor y con la base de datos
+![Captura de pantalla 2022-11-15 161855](https://user-images.githubusercontent.com/109297564/201957834-a89baac7-1b02-47f2-b862-f90759584bda.jpg)
 
 A partir de aqui y comenzaremos a crear lo que sera nuestra base de datos.
 Crearemos los modelos que una vez los migremos a nuestra base de datos seran las tablas donde alojaremos todos nuestros datos (seeders).
@@ -30,12 +32,9 @@ Una vez ya creados los modelos pasaremos a migrarlos a la base datos, donde se c
 
 ![Captura de pantalla 2022-11-05 114513](https://user-images.githubusercontent.com/109297564/200197400-7a8d6694-ce6c-4b7a-97c7-18e9a41ce844.jpg)
 
-Como vemos en la imagen en las migraciones encontraremos lo que habra dentro de la tabla, en este caso solo tiene un id, pero también podriamos encontrar, nombre, dirección, titulo de pelicula, etc
+Como vemos en la imagen en las migraciones encontraremos lo que habra dentro de la tabla, en este caso solo tiene un id, pero también podriamos encontrar, nombre, titulo de pelicula, etc
 
 Una vez migradas las tablas comprobamos como quedan las relaciones en nuestra base de datos.
-
-![Captura de pantalla 2022-11-06 194411](https://user-images.githubusercontent.com/109297564/200195942-4512e1ad-ac5e-4a1d-b525-a713314aacb4.jpg)
-
 Una vez comprobado que nuestras relaciones estan bien estructuradas, pasaremos a rellenar las tablas de las bases de datos a traves de los seeders, los cuales realizaremos desde el VS, y luego volcaremos a nuestra base de datos con el comando npx sequelize-cli db:seed:all
 
 ![Captura de pantalla 2022-11-06 204024](https://user-images.githubusercontent.com/109297564/200196070-d7d498f7-3a67-43f9-8948-ce4a64745c74.jpg)
@@ -45,25 +44,27 @@ Aquí podemos ver un ejemplo de los datos que hemos introducido a traves de los 
 Una vez ya completa la base de datos comenzaremos a realizar los ENDPOINTS, los cuales nos ayudaran a realizar las consultas que queramos en nuestra base de datos.
 Para ello crearemos un archivo router.js, que será donde crearemos una ruta para cada una de las tablas de la base de datos a las que queramos acceder
 
-![Captura de pantalla 2022-11-13 120705](https://user-images.githubusercontent.com/109297564/201518669-31153f8b-7d17-4e14-9ea4-21e4c47eb1ec.jpg)
-
+![Captura de pantalla 2022-11-15 162735](https://user-images.githubusercontent.com/109297564/201958727-d360255f-4993-4eb4-8be2-d24eab4606d3.jpg)
 
 Para lograr acceder a a estas rutas, crearemos una carpeta de views donde estaran los archivos que gestionaran las rutas y los endpoints que apuntan a estas rutas.
 
 ![Captura de pantalla 2022-11-13 120756](https://user-images.githubusercontent.com/109297564/201518666-9ac5f627-1f91-48c6-a997-462564b5b3b7.jpg)
 
 
-Y para que tanto el archivo router.js como los views funcionen, tenemos qque crear las funciones de cada endpoint, y para ello crearemos los controllers, donde crearemos un archivo para cada tabla en la que queramos buscar(movies, series, usuario...)
+Y para que tanto el archivo router.js como los views funcionen, tenemos que crear las funciones de cada endpoint, y para ello crearemos los controllers, donde crearemos un archivo para cada tabla en la que queramos buscar(movies, series, usuario...)
 
-![Captura de pantalla 2022-11-13 120814](https://user-images.githubusercontent.com/109297564/201518665-5390d9fd-0128-4c9d-9f1b-cc4783c5ee8d.jpg)
+![Captura de pantalla 2022-11-15 162854](https://user-images.githubusercontent.com/109297564/201958993-586ebfe7-6bd3-410b-a40c-338b13e1c0d0.jpg)
+
 
 
 Una vez ya realizado todo esto y para comprobar que nuestra base de datos funciona correctamente, y podemos utilizar los endpoints para buscar lo que queramos utilizaremos el programa Postman para realizar esas consultas.
 
-![Captura de pantalla 2022-11-06 194411](https://user-images.githubusercontent.com/109297564/200196983-6de91375-5281-4e07-8437-02bf247e862f.jpg)
+![Captura de pantalla 2022-11-15 163034](https://user-images.githubusercontent.com/109297564/201959412-1b0c8d1a-3f35-40ba-8fbd-7aafc62002ed.jpg)
 
-Por ultimo y para finalizar el proyecto, utilizaremos la pagina railway, para subir nustra base de datos en producción y asi poder acceder a ella con facilidad.
-<<<<<<< HEAD
-=======
+Por ultimo y para finalizar el proyecto, utilizaremos la pagina railway, para subir nustra base de datos y asi poder acceder a ella con facilidad.
+Para ello cambiaremos el archivo config.json poniendo el puerto, el host, y la database que nos dara la pagina de Railway
 
->>>>>>> 6d4a1c2ea9e9729250c1087cec156626d64010f5
+
+![Captura de pantalla 2022-11-15 161957](https://user-images.githubusercontent.com/109297564/201957158-c758d57f-eb76-4aa0-95ad-7f39fd9831cd.jpg)
+
+
