@@ -56,101 +56,103 @@ Y para que tanto el archivo router.js como los views funcionen, tenemos que crea
 
 ENDPOINTS REALIZADOS
 
-End-points CRUD para peliculas
+_End-points CRUD para peliculas_
+
 router.get('/', MovieController.getAll);
-Mostrar todas las películas
+_Mostrar todas las películas_
 
 router.get('/:id', MovieController.getById);
-Mostrar películas por Id
+_Mostrar películas por Id_
 
 router.get('/title/:title', MovieController.getByTitle);
-Mostrar películas por título
+_Mostrar películas por título_
 
 router.get('/rank/:rank', MovieController.getByRank);
-Mostrar películas por ranking
+_Mostrar películas por ranking_
 
 router.post('/', MovieController.create);
-Crear una película
+_Crear una película_
 
 router.put('/:id', MovieController.update);
-Modificar una película
+_Modificar una película_
 
 router.delete('/', MovieController.deleteAll);
-Borrar todas las películas
+_Borrar todas las películas_
 
 router.delete('/:id', MovieController.delete);
-Borrar una película
+_Borrar una película_
 
-// End-points CRUD para series
+_// \_End-points CRUD para series_
 router.get('/', SerieController.getAll);
-Mostrar todas las series
+_Mostrar todas las series_
 
 router.get('/:id', SerieController.getById);
-Mostrar series por Id
+_Mostrar series por Id_
 
 router.get('/nombre/:title', SerieController.getByTitle);
-Mostrar series por titulo
+_Mostrar series por titulo_
 
 router.get('/rank/:rank', SerieController.getTopSerie);
-Mostrar series por ranking
+_Mostrar series por ranking_
 
 router.get('/theater/:theater', SerieController.getSerieTheater);
-Mostrar series que se hayan hecho en el teatro
+_Mostrar series que se hayan hecho en el teatro_
 
 router.get('/cinema/:cinema', SerieController.getSerieCinema);
-Mostrar series que se hayan hecho en el cine
+_Mostrar series que se hayan hecho en el cine_
 
-router.get('/episode_7_days/:espisode_7_days', SerieController.get7Days)
-Mostrar series que estrenen capítulo en los proximos 7 dias
+router.get('/episode*7_days/:espisode_7_days', SerieController.get7Days)
+\_Mostrar series que estrenen capítulo en los proximos 7 dias*
 
 router.post('/', SerieController.create);
-Crear una serie
+_Crear una serie_
 
 router.put('/:id', SerieController.update);
-Modificar una serie
+_Modificar una serie_
 
 router.delete('/', SerieController.deleteAll);
-Borrar todas las series
+_Borrar todas las series_
 
 router.delete('/:id', SerieController.delete);
-Borrar una serie
+_Borrar una serie_
 
-ENDPOINTS de alquileres
+_//ENDPOINTS de alquileres_
 
 router.post('/movie', isValidUser(), RentController.RentMovie)
-Alquilar una película
+_Alquilar una película_
 
 router.post('/serie', isValidUser(), RentController.RentSerie)
-Alquilar una serie
+_Alquilar una serie_
 
 router.put('/:id', isValidUser(), RentController.update)
-Modificar un pedido
+_Modificar un pedido_
 
 router.get('/rent/mail', RentController.getRentByUser)
-Alquileres de un usuario
+_Alquileres de un usuario_
 
 router.get('/', isValidRole("admin"), RentController.getAll)
-Todos los Alquileres solo administrados
+_Todos los Alquileres solo administrados_
 
-ENDPOINTS de los usuarios
+_//ENDPOINTS de los usuarios_
+
 router.get("/", UsuarioController.getAll);
-Mostrar todos los usuarios
+_Mostrar todos los usuarios_
 
 router.post('/', UsuarioController.create);
-Crear nuevo usuario
+_Crear nuevo usuario_
 
 router.get("/usuario/:email", UsuarioController.getUsuarioByEmail);
-Mostrar usuarios por mail
+_Mostrar usuarios por mail_
 
 router.patch('/updateUsuario/:mail', isValidUsuario(), UsuarioController.updateUser);
-Modificar usuario
+_Modificar usuario_
 
 router.delete('/deleteUsuario/:mail', isValidRol("admin"), UsuarioController.deleteUser)
-Borrar usuario(solo puede hacerlo el admin)
+_Borrar usuario(solo puede hacerlo el admin)_
 
-ENDPOINTS de autentificación
+_//ENDPOINTS de autentificación_
 
-login y registro
+_login y registro_
 
 router.post('/signin', AuthController.signIn);
 router.post('/signup', AuthController.signUp);
