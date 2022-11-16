@@ -80,7 +80,7 @@ router.delete('/', MovieController.deleteAll);
 _**Borrar todas las películas**_
 
 router.delete('/:id', MovieController.delete);
-_Borrar una película_
+_**Borrar una película**_
 
 _// _**End-points CRUD para series**\_
 
@@ -102,8 +102,8 @@ _**Mostrar series que se hayan hecho en el teatro**_
 router.get('/cinema/:cinema', SerieController.getSerieCinema);
 _**Mostrar series que se hayan hecho en el cine**_
 
-router.get('/episode\*7*days/:espisode_7_days', SerieController.get7Days)
-***Mostrar series que estrenen capítulo en los proximos 7 dias**
+router.get('/episode\*7\*days/:espisode_7_days', SerieController.get7Days)
+**\*Mostrar series que estrenen capítulo en los proximos 7 dias**
 
 router.post('/', SerieController.create);
 _**Crear una serie**_
@@ -155,7 +155,8 @@ _//**ENDPOINTS de autentificación**_
 
 _**login y registro**_
 
-router.post('/signin', AuthController.signIn);
+## router.post('/signin', AuthController.signIn);
+
 router.post('/signup', AuthController.signUp);
 
 Una vez ya realizado todo esto y para comprobar que nuestra base de datos funciona correctamente, y podemos utilizar los endpoints para buscar lo que queramos utilizaremos el programa Postman para realizar esas consultas.
