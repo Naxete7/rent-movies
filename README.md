@@ -56,7 +56,7 @@ Y para que tanto el archivo router.js como los views funcionen, tenemos que crea
 
 ENDPOINTS REALIZADOS
 
-_##**End-points CRUD para peliculas**##_
+**##End-points CRUD para peliculas**
 
 router.get('/', MovieController.getAll);
 _**Mostrar todas las películas**_
@@ -82,7 +82,7 @@ _**Borrar todas las películas**_
 router.delete('/:id', MovieController.delete);
 _**Borrar una película**_
 
-_// ##**End-points CRUD para series**##_
+**##End-points CRUD para series**
 
 router.get('/', SerieController.getAll);
 _**Mostrar todas las series**_
@@ -117,7 +117,7 @@ _**Borrar todas las series**_
 router.delete('/:id', SerieController.delete);
 _**Borrar una serie**_
 
-##**//ENDPOINTS de alquileres**##\_
+**##ENDPOINTS de alquileres**
 
 router.post('/movie', isValidUser(), RentController.RentMovie)
 _**Alquilar una película**_
@@ -134,7 +134,7 @@ _**Alquileres de un usuario**_
 router.get('/', isValidRole("admin"), RentController.getAll)
 _**Todos los Alquileres solo administrados**_
 
-_//**ENDPOINTS de los usuarios**_
+**##ENDPOINTS de los usuarios**
 
 router.get("/", UsuarioController.getAll);
 _**Mostrar todos los usuarios**_
@@ -151,7 +151,7 @@ _**Modificar usuario**_
 router.delete('/deleteUsuario/:mail', isValidRol("admin"), UsuarioController.deleteUser)
 _**Borrar usuario(solo puede hacerlo el admin)**_
 
-_//##**ENDPOINTS de autentificación**##_
+**##ENDPOINTS de autentificación**
 
 _**login y registro**_
 
