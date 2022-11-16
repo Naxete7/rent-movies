@@ -56,103 +56,104 @@ Y para que tanto el archivo router.js como los views funcionen, tenemos que crea
 
 ENDPOINTS REALIZADOS
 
-_End-points CRUD para peliculas_
+_**End-points CRUD para peliculas**_
 
 router.get('/', MovieController.getAll);
-_Mostrar todas las películas_
+_**Mostrar todas las películas**_
 
 router.get('/:id', MovieController.getById);
-_Mostrar películas por Id_
+_**Mostrar películas por Id**_
 
 router.get('/title/:title', MovieController.getByTitle);
-_Mostrar películas por título_
+_**Mostrar películas por título**_
 
 router.get('/rank/:rank', MovieController.getByRank);
-_Mostrar películas por ranking_
+_**Mostrar películas por ranking**_
 
 router.post('/', MovieController.create);
-_Crear una película_
+_**Crear una película**_
 
 router.put('/:id', MovieController.update);
-_Modificar una película_
+_**Modificar una película**_
 
 router.delete('/', MovieController.deleteAll);
-_Borrar todas las películas_
+_**Borrar todas las películas**_
 
 router.delete('/:id', MovieController.delete);
 _Borrar una película_
 
-_// \_End-points CRUD para series_
+_// _**End-points CRUD para series**\_
+
 router.get('/', SerieController.getAll);
-_Mostrar todas las series_
+_**Mostrar todas las series**_
 
 router.get('/:id', SerieController.getById);
-_Mostrar series por Id_
+_**Mostrar series por Id**_
 
 router.get('/nombre/:title', SerieController.getByTitle);
-_Mostrar series por titulo_
+_**Mostrar series por titulo**_
 
 router.get('/rank/:rank', SerieController.getTopSerie);
-_Mostrar series por ranking_
+_**Mostrar series por ranking**_
 
 router.get('/theater/:theater', SerieController.getSerieTheater);
-_Mostrar series que se hayan hecho en el teatro_
+_**Mostrar series que se hayan hecho en el teatro**_
 
 router.get('/cinema/:cinema', SerieController.getSerieCinema);
-_Mostrar series que se hayan hecho en el cine_
+_**Mostrar series que se hayan hecho en el cine**_
 
-router.get('/episode*7_days/:espisode_7_days', SerieController.get7Days)
-\_Mostrar series que estrenen capítulo en los proximos 7 dias*
+router.get('/episode\*7*days/:espisode_7_days', SerieController.get7Days)
+***Mostrar series que estrenen capítulo en los proximos 7 dias**
 
 router.post('/', SerieController.create);
-_Crear una serie_
+_**Crear una serie**_
 
 router.put('/:id', SerieController.update);
-_Modificar una serie_
+_**Modificar una serie**_
 
 router.delete('/', SerieController.deleteAll);
-_Borrar todas las series_
+_**Borrar todas las series**_
 
 router.delete('/:id', SerieController.delete);
-_Borrar una serie_
+_**Borrar una serie**_
 
-_//ENDPOINTS de alquileres_
+**//ENDPOINTS de alquileres**\_
 
 router.post('/movie', isValidUser(), RentController.RentMovie)
-_Alquilar una película_
+_**Alquilar una película**_
 
 router.post('/serie', isValidUser(), RentController.RentSerie)
-_Alquilar una serie_
+_**Alquilar una serie**_
 
 router.put('/:id', isValidUser(), RentController.update)
-_Modificar un pedido_
+_**Modificar un pedido**_
 
 router.get('/rent/mail', RentController.getRentByUser)
-_Alquileres de un usuario_
+_**Alquileres de un usuario**_
 
 router.get('/', isValidRole("admin"), RentController.getAll)
-_Todos los Alquileres solo administrados_
+_**Todos los Alquileres solo administrados**_
 
-_//ENDPOINTS de los usuarios_
+_//**ENDPOINTS de los usuarios**_
 
 router.get("/", UsuarioController.getAll);
-_Mostrar todos los usuarios_
+_**Mostrar todos los usuarios**_
 
 router.post('/', UsuarioController.create);
-_Crear nuevo usuario_
+_**Crear nuevo usuario**_
 
 router.get("/usuario/:email", UsuarioController.getUsuarioByEmail);
-_Mostrar usuarios por mail_
+_**Mostrar usuarios por mail**_
 
 router.patch('/updateUsuario/:mail', isValidUsuario(), UsuarioController.updateUser);
-_Modificar usuario_
+_**Modificar usuario**_
 
 router.delete('/deleteUsuario/:mail', isValidRol("admin"), UsuarioController.deleteUser)
-_Borrar usuario(solo puede hacerlo el admin)_
+_**Borrar usuario(solo puede hacerlo el admin)**_
 
-_//ENDPOINTS de autentificación_
+_//**ENDPOINTS de autentificación**_
 
-_login y registro_
+_**login y registro**_
 
 router.post('/signin', AuthController.signIn);
 router.post('/signup', AuthController.signUp);
