@@ -56,7 +56,7 @@ Y para que tanto el archivo router.js como los views funcionen, tenemos que crea
 
 ENDPOINTS REALIZADOS
 
-_**End-points CRUD para peliculas**_
+_##**End-points CRUD para peliculas**##_
 
 router.get('/', MovieController.getAll);
 _**Mostrar todas las películas**_
@@ -82,7 +82,7 @@ _**Borrar todas las películas**_
 router.delete('/:id', MovieController.delete);
 _**Borrar una película**_
 
-_// _**End-points CRUD para series**\_
+_// ##**End-points CRUD para series**##_
 
 router.get('/', SerieController.getAll);
 _**Mostrar todas las series**_
@@ -103,7 +103,7 @@ router.get('/cinema/:cinema', SerieController.getSerieCinema);
 _**Mostrar series que se hayan hecho en el cine**_
 
 router.get('/episode\*7\*days/:espisode_7_days', SerieController.get7Days)
-**\*Mostrar series que estrenen capítulo en los proximos 7 dias**
+**Mostrar series que estrenen capítulo en los proximos 7 dias**
 
 router.post('/', SerieController.create);
 _**Crear una serie**_
@@ -117,7 +117,7 @@ _**Borrar todas las series**_
 router.delete('/:id', SerieController.delete);
 _**Borrar una serie**_
 
-**//ENDPOINTS de alquileres**\_
+##**//ENDPOINTS de alquileres**##\_
 
 router.post('/movie', isValidUser(), RentController.RentMovie)
 _**Alquilar una película**_
@@ -151,11 +151,11 @@ _**Modificar usuario**_
 router.delete('/deleteUsuario/:mail', isValidRol("admin"), UsuarioController.deleteUser)
 _**Borrar usuario(solo puede hacerlo el admin)**_
 
-_//**ENDPOINTS de autentificación**_
+_//##**ENDPOINTS de autentificación**##_
 
 _**login y registro**_
 
-## router.post('/signin', AuthController.signIn);
+router.post('/signin', AuthController.signIn);
 
 router.post('/signup', AuthController.signUp);
 
