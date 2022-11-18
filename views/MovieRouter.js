@@ -9,7 +9,6 @@ router.get('/', MovieController.getAll);
 router.get('/:id', MovieController.getById);
 router.get('/title/:title', MovieController.getByTitle);
 router.get('/rank/:rank', MovieController.getByRank);
-//router.get('/type/:type', MovieController.getByType);
 router.post('/', MovieController.create);
 router.put('/:id', MovieController.update);
 router.delete('/', MovieController.deleteAll);
