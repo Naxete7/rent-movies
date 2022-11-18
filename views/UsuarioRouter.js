@@ -10,13 +10,13 @@ const UsuarioController = require('../controllers/UsuarioController');
 router.get("/", UsuarioController.getAll);
 
 //Crear nuevo usuario
-router.post('/', UsuarioController.create);
+//router.post('/', UsuarioController.create);
 
 // Mostrar usuarios por mail
-router.get("/usuario/:email", UsuarioController.getUsuarioByEmail);
+//router.get("/usuario/:email", UsuarioController.getUsuarioByEmail);
 
 // Modificar usuario
-//router.patch('/updateUsuario/:mail', isValidUsuario(), UsuarioController.updateUser);
+//router.patch('/updateUsuario/:email', UsuarioController.updateUser);
 
 //Borrar usuario(solo puede hacerlo el admin)
 //router.delete('/deleteUsuario/:mail', isValidRol("admin"), UsuarioController.deleteUser)

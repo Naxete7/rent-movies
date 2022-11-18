@@ -12,6 +12,6 @@ router.use('/movie', MovieRouter);
 router.use('/serie', SerieRouter);
 router.use('/usuario', UsuarioRouter);
 //router.use('/rent', RentRouter);
-//router.use('/auth', AuthRouter);
+router.use('/auth', AuthRouter);
 
 module.exports = router; 

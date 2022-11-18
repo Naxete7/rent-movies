@@ -1,7 +1,7 @@
 {
-  "name": "prc18",
+  "name": "backendrent4",
   "version": "0.0.1",
-  "description": "Proyecto inicial API REST",
+  "description": "Proyecto Backend alquiler peliculas",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,8 +10,7 @@
   },
   "keywords": [
     "node",
-    "API",
-    "GeeksHubs"
+    "API"
   ],
   "author": "",
   "license": "ISC",
