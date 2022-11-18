@@ -6,7 +6,7 @@ const SerieController = require('../controllers/SerieController');
 // End-points CRUD series
 router.get('/', SerieController.getAll);
 router.get('/:id', SerieController.getById);
-router.get('/nombre/:title', SerieController.getByTitle);
+router.get('/title/:title', SerieController.getByTitle);
 router.get('/rank/:rank', SerieController.getTopSerie);
 router.get('/theater/:theater', SerieController.getSerieTheater);
 router.get('/cinema/:cinema', SerieController.getSerieCinema);

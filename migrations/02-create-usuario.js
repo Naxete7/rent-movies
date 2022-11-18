@@ -12,9 +12,6 @@ module.exports = {
       nombre: {
         type: Sequelize.STRING
       },
-      apellido: {
-        type: Sequelize.STRING
-      },
       email: {
         type: Sequelize.STRING
       },
@@ -24,7 +21,7 @@ module.exports = {
       rolId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'rols',
+          model: 'rol',
           key: 'id'
         },
         createdAt: {

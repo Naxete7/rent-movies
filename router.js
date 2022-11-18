@@ -4,13 +4,13 @@ const router = require('express').Router();
 const MovieRouter = require('./views/MovieRouter');
 const SerieRouter = require('./views/SerieRouter');
 const UsuarioRouter = require('./views/UsuarioRouter');
-//const RentRouter = require('/views/RentRouter.js');
+//const RentRouter = require('/views/RentRouter');
 const AuthRouter = require('./views/AuthRouter');
 
 //Rutas
-router.use('/movie', MovieRouter);
-router.use('/serie', SerieRouter);
-router.use('/usuario', UsuarioRouter);
+router.use('/movies', MovieRouter);
+router.use('/series', SerieRouter);
+router.use('/usuarios', UsuarioRouter);
 //router.use('/rent', RentRouter);
 router.use('/auth', AuthRouter);
 

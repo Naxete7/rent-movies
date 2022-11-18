@@ -90,7 +90,7 @@ _**Mostrar todas las series**_
 router.get('/:id', SerieController.getById);
 _**Mostrar series por Id**_
 
-router.get('/nombre/:title', SerieController.getByTitle);
+router.get('/title/:title', SerieController.getByTitle);
 _**Mostrar series por titulo**_
 
 router.get('/rank/:rank', SerieController.getTopSerie);
@@ -139,10 +139,7 @@ _**Todos los Alquileres solo administrados**_
 router.get("/", UsuarioController.getAll);
 _**Mostrar todos los usuarios**_
 
-router.post('/', UsuarioController.create);
-_**Crear nuevo usuario**_
-
-router.get("/usuario/:email", UsuarioController.getUsuarioByEmail);
+router.get("/usuarios/:email", UsuarioController.getUsuarioByEmail);
 _**Mostrar usuarios por mail**_
 
 router.patch('/updateUsuario/:mail', isValidUsuario(), UsuarioController.updateUser);
@@ -155,9 +152,9 @@ _**Borrar usuario(solo puede hacerlo el admin)**_
 
 _**login y registro**_
 
-router.post('/signin', AuthController.signIn);
+router.post('/signin', AuthController.signIn); **LOGIN**
 
-router.post('/signup', AuthController.signUp);
+router.post('/signup', AuthController.signUp); **REGISTRO DE UN USUARIO NUEVO**
 
 Una vez ya realizado todo esto y para comprobar que nuestra base de datos funciona correctamente, y podemos utilizar los endpoints para buscar lo que queramos utilizaremos el programa Postman para realizar esas consultas.
 
