@@ -5,7 +5,7 @@ var rentModel  = require('../models').rent;  //Add for dependency response
 const RentController = {}; //Create the object controller
 
 
-//Nuevo pedido
+//Alquilar una pelicula
 RentControllers.RentMovie = async (req, res) => {
   try {
     let body = req.body;
@@ -43,29 +43,56 @@ RentControllers.RentMovie = async (req, res) => {
   } catch (error) {
     res.json({ message: "Error" })
     console.error(error)
+  };
+
+}
+
+
+//Alquilar una serie
+RentControllers.RentSerie = async (req, res) => {
+  try {
+    let body = req.body;
+    delete body.date
+    delete body.end_date
+    if (body.email === req.auth?.email) {
+      let serie = await models.Serie.findOne({
+        where: { title: body.name }
+      })
+      let repeated = await models.Rent.findOne({
+        where: {
+          UsuarioId: req.auth.id,
+          ArticleId: serie.ArticleId,
+          end_date: null
+        }
+      })
+      if (!repeated) {
+        let resp = await models.Rent.create({
+          date: `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`,
+          end_date: null,
+          UsuarioId: req.auth.id,
+          ArticleId: serie.ArticleId
+        })
+        res.status(200).json({
+          resp,
+          email: req.auth?.email,
+          message: "ALquiler realizado!"
+        })
+      } else {
+        res.json({
+          message: "No ha podido alquilar la serie"
+        })
+      }
+    }
+  } catch (error) {
+    res.json({ message: "Error" })
+    console.error(error)
   }
 
 }
 
 
-
-
-
-
-
-
-//-----------------------------------------------------------------------------------------------------
-//Modificar pedido
-
-
-
-
-
-
-
-
 //------------------------------------------------------------------------------------------------------------
-//Mostrar todos los pedidos (solo administrador)
+//Mostrar todos los pedidos
 
 RentController.getAll = (req, res) => {
    const type = req.query.type;
@@ -84,35 +111,5 @@ RentController.getAll = (req, res) => {
     });
 
 };
-
-
-
-
-
-
-
-
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//Mostrar pedidos de un usuario
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = RentController;

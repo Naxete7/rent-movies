@@ -9,16 +9,10 @@ const {isValidUser, isValidRole} = require('../middlewares/auth')
 //Alquilar una película
 router.post('/movie', isValidUser(), RentController.RentMovie)
 
-////Alquilar una serie
-//router.post('/serie', isValidUser(), RentController.RentSerie)
+//Alquilar una serie
+router.post('/serie', isValidUser(), RentController.RentSerie)
 
-////Modificar un pedido
-//router.put('/:id', isValidUser(), RentController.update)
-
-////Alquileres de un usuario
-//router.get('/rent/mail', RentController.getRentByUser)
-
-////Todos los Alquileres solo administrados
+//Ver todos los Alquileres
 router.get('/', RentController.getAll)
 
 module.exports = router;

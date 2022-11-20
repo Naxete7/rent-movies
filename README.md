@@ -125,12 +125,6 @@ _**Alquilar una película**_
 router.post('/serie', isValidUser(), RentController.RentSerie)
 _**Alquilar una serie**_
 
-router.put('/:id', isValidUser(), RentController.update)
-_**Modificar un pedido**_
-
-router.get('/rent/mail', RentController.getRentByUser)
-_**Alquileres de un usuario**_
-
 router.get('/', isValidRole("admin"), RentController.getAll)
 _**Todos los Alquileres solo administrados**_
 
@@ -141,12 +135,6 @@ _**Mostrar todos los usuarios**_
 
 router.get("/usuarios/:email", UsuarioController.getUsuarioByEmail);
 _**Mostrar usuarios por mail**_
-
-router.patch('/updateUsuario/:mail', isValidUsuario(), UsuarioController.updateUser);
-_**Modificar usuario**_
-
-router.delete('/deleteUsuario/:mail', isValidRol("admin"), UsuarioController.deleteUser)
-_**Borrar usuario(solo puede hacerlo el admin)**_
 
 **##ENDPOINTS de autentificación**
 
