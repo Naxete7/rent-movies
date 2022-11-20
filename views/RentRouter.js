@@ -4,7 +4,7 @@ const models = require('../models/index')
 //Importo modelo de datos
 const RentController = require('../controllers/RentController');
 //Importo Middleware para las funciones unicas del administrador
-//const {isValidUser, isValidRole} = require('../middlewares/auth')
+const {isValidUser, isValidRole} = require('../middlewares/auth')
 
 //Alquilar una película
 router.post('/movie', isValidUser(), RentController.RentMovie)
@@ -19,6 +19,6 @@ router.post('/movie', isValidUser(), RentController.RentMovie)
 //router.get('/rent/mail', RentController.getRentByUser)
 
 ////Todos los Alquileres solo administrados
-//router.get('/', isValidRole("admin"), RentController.getAll)
+router.get('/', RentController.getAll)
 
 module.exports = router;

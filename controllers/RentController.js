@@ -67,7 +67,23 @@ RentControllers.RentMovie = async (req, res) => {
 //------------------------------------------------------------------------------------------------------------
 //Mostrar todos los pedidos (solo administrador)
 
+RentController.getAll = (req, res) => {
+   const type = req.query.type;
+    var condition = type ? { type: { [Op.like]: `%${type}%` } } : null;
 
+
+  rent.findAll({})
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Error"
+      });
+    });
+
+};
 
 
 
