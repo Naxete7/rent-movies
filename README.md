@@ -156,3 +156,116 @@ Para ello cambiaremos el archivo config.json poniendo el puerto, el host, y la d
 Y por último en estas dos imágenes vemos como quedaria nuestra base de datos en railway.
 ![Captura de pantalla 2022-11-15 163127](https://user-images.githubusercontent.com/109297564/201959930-72a3f41b-7ba2-4c3d-96e7-848622802ac2.jpg)
 ![Captura de pantalla 2022-11-15 163144](https://user-images.githubusercontent.com/109297564/201959942-f03648dd-bf2d-4d81-a759-b332ff5cbaa2.jpg)
+
+Para finalizar dejamos, los comandos básicos, y los ENDPOINTS realizados para poder realizar el proyecto
+
+COMANDOS BÁSICOS
+
+npm init
+npm install
+npm update
+npm run dev
+npm run start
+
+npm install cors jsonwebtoken bcrypt
+sequelize model:generate --name user --attributes name:string, password:string, email:string
+sequelize db:create
+sequelize db:migrate
+
+sequelize db:migrate:undo
+sequelize db:migrate:undo:all
+
+sequelize seed:generate --name demo-user
+sequelize db:seed:all
+sequelize db:seed:undo
+sequelize db:seed:undo:all
+
+ENDPOINTS
+
+**##End-points CRUD para peliculas**
+
+router.get('/', MovieController.getAll);
+_**Mostrar todas las películas**_
+
+router.get('/:id', MovieController.getById);
+_**Mostrar películas por Id**_
+
+router.get('/title/:title', MovieController.getByTitle);
+_**Mostrar películas por título**_
+
+router.get('/rank/:rank', MovieController.getByRank);
+_**Mostrar películas por ranking**_
+
+router.post('/', MovieController.create);
+_**Crear una película**_
+
+router.put('/:id', MovieController.update);
+_**Modificar una película**_
+
+router.delete('/', MovieController.deleteAll);
+_**Borrar todas las películas**_
+
+router.delete('/:id', MovieController.delete);
+_**Borrar una película**_
+
+**##End-points CRUD para series**
+
+router.get('/', SerieController.getAll);
+_**Mostrar todas las series**_
+
+router.get('/:id', SerieController.getById);
+_**Mostrar series por Id**_
+
+router.get('/title/:title', SerieController.getByTitle);
+_**Mostrar series por titulo**_
+
+router.get('/rank/:rank', SerieController.getTopSerie);
+_**Mostrar series por ranking**_
+
+router.get('/theater/:theater', SerieController.getSerieTheater);
+_**Mostrar series que se hayan hecho en el teatro**_
+
+router.get('/cinema/:cinema', SerieController.getSerieCinema);
+_**Mostrar series que se hayan hecho en el cine**_
+
+router.get('/episode\*7\*days/:espisode_7_days', SerieController.get7Days)
+**Mostrar series que estrenen capítulo en los proximos 7 dias**
+
+router.post('/', SerieController.create);
+_**Crear una serie**_
+
+router.put('/:id', SerieController.update);
+_**Modificar una serie**_
+
+router.delete('/', SerieController.deleteAll);
+_**Borrar todas las series**_
+
+router.delete('/:id', SerieController.delete);
+_**Borrar una serie**_
+
+**##ENDPOINTS de alquileres**
+
+router.post('/movie', isValidUser(), RentController.RentMovie)
+_**Alquilar una película**_
+
+router.post('/serie', isValidUser(), RentController.RentSerie)
+_**Alquilar una serie**_
+
+router.get('/', isValidRole("admin"), RentController.getAll)
+_**Todos los Alquileres solo administrados**_
+
+**##ENDPOINTS de los usuarios**
+
+router.get("/", UsuarioController.getAll);
+_**Mostrar todos los usuarios**_
+
+router.get("/usuarios/:email", UsuarioController.getUsuarioByEmail);
+_**Mostrar usuarios por mail**_
+
+**##ENDPOINTS de autentificación**
+
+_**login y registro**_
+
+router.post('/signin', AuthController.signIn); **LOGIN**
+
+router.post('/signup', AuthController.signUp); **REGISTRO DE UN USUARIO NUEVO**

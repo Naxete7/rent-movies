@@ -22,10 +22,11 @@ UsuarioController.getAll = (req, res) => {
   };
 
   //Mostrar usuario por mail
+
 UsuarioController.getUsuarioByEmail = async (req, res) => {
     try {
         let email = req.params.email
-        let resp = await usuario.findOne({
+        let res = await usuario.findOne({
             where: { email: email }
         })
             .then(resp => {
