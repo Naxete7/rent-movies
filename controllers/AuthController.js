@@ -50,7 +50,7 @@ AuthController.signUp = (req, res)=> {
             nombre: req.body.nombre,
             apellido:req.body.apellido,
             email: req.body.email,
-            password: password
+            password: password,
         }).then(usuario => {
 
             // Creamos el token
