@@ -58,10 +58,10 @@ SerieController.create = (req, res) => {
   }
   
       // Crear series
-      const newSerie = {
-        title: req.body.title,
-        articleId: req.body.articleId
-      };
+      //const newSerie = {
+      //  title: req.body.title,
+      //  articleId: req.body.articleId
+      //};
   
       // Guardar series en la db
       serie.create(newSerie)

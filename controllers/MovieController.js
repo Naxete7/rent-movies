@@ -51,33 +51,33 @@ MovieController.getById = (req, res) => {
 
 //-------------------------------------------------------------------------------------
 //CREATE una nueva película en la base de datos
-MovieController.create = (req, res) => {
+//MovieController.create = (req, res) => {
       
-  if (!req.body.title) {
-    res.status(400).send({
-      message: "El contenido no puede estar vacío!"
-    });
-    return;
-  }
+//  if (!req.body.title) {
+//    res.status(400).send({
+//      message: "El contenido no puede estar vacío!"
+//    });
+//    return;
+//  }
   
-      // Crear películas
-      const newMovie = {
-        title: req.body.title,
-        articleId: req.body.articleId
-      };
+//      // Crear películas
+//      const newMovie = {
+//        title: req.body.title,
+//        articleId: req.body.articleId
+//      };
   
       // Guardar peliculas en la db
-      movie.create(newMovie)
-        .then(data => {
-          res.send(data);
-        })
-        .catch(err => {
-          res.status(500).send({
-            message:
-              err.message || "Ocurrió un error al crear la película."
-          });
-        });
-    };
+      //movie.create(newMovie)
+      //  .then(data => {
+      //    res.send(data);
+      //  })
+      //  .catch(err => {
+      //    res.status(500).send({
+      //      message:
+      //        err.message || "Ocurrió un error al crear la película."
+      //    });
+      //  });
+    //};
 
 
   //-------------------------------------------------------------------------------------

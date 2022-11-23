@@ -11,7 +11,7 @@ router.get('/rank/:rank', SerieController.getTopSerie);
 router.get('/theater/:theater', SerieController.getSerieTheater);
 router.get('/cinema/:cinema', SerieController.getSerieCinema);
 router.get('/episode_7_days/:espisode_7_days', SerieController.get7Days)
-router.post('/', SerieController.create);
+//router.post('/', SerieController.create);
 router.put('/:id', SerieController.update);
 router.delete('/', SerieController.deleteAll);
 router.delete('/:id', SerieController.delete);
