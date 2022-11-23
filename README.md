@@ -22,7 +22,8 @@ En primer lugar crearemos un index.js donde crearemos la base del proyecto y ser
 A partir de aqui y comenzaremos a crear lo que sera nuestra base de datos.
 Crearemos los modelos que una vez los migremos a nuestra base de datos seran las tablas donde alojaremos todos nuestros datos (seeders).
 
-![Captura de pantalla 2022-11-06 221720](https://user-images.githubusercontent.com/109297564/200195645-bf7c611d-e4d0-4da3-86a3-37b7f16c1efd.jpg)
+![Captura de pantalla 2022-11-23 095825](https://user-images.githubusercontent.com/109297564/203506544-fd7e7301-95cb-42e9-a8db-d2fa5f56709e.jpg)
+
 
 ![Captura de pantalla 2022-11-06 221748](https://user-images.githubusercontent.com/109297564/200195647-d402c04a-06b1-4564-8a8c-1722eada8129.jpg)
 
@@ -30,7 +31,8 @@ Como vemos en las imagenes de arriba, por un lado esta la carpeta models con tod
 
 Una vez ya creados los modelos pasaremos a migrarlos a la base datos, donde se convertiran en las tablas.
 
-![Captura de pantalla 2022-11-05 114513](https://user-images.githubusercontent.com/109297564/200197400-7a8d6694-ce6c-4b7a-97c7-18e9a41ce844.jpg)
+![Captura de pantalla 2022-11-23 095915](https://user-images.githubusercontent.com/109297564/203506625-abab228b-f744-4e03-b8df-2733c1d2d33e.jpg)
+
 
 Como vemos en la imagen en las migraciones encontraremos lo que habra dentro de la tabla, en este caso solo tiene un id, pero también podriamos encontrar, nombre, titulo de pelicula, etc
 
