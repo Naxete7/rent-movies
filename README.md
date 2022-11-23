@@ -22,7 +22,8 @@ En primer lugar crearemos un index.js donde crearemos la base del proyecto y ser
 A partir de aqui y comenzaremos a crear lo que sera nuestra base de datos.
 Crearemos los modelos que una vez los migremos a nuestra base de datos seran las tablas donde alojaremos todos nuestros datos (seeders).
 
-![Captura de pantalla 2022-11-23 095825](https://user-images.githubusercontent.com/109297564/203506544-fd7e7301-95cb-42e9-a8db-d2fa5f56709e.jpg)
+
+![Captura de pantalla 2022-11-23 100355](https://user-images.githubusercontent.com/109297564/203507282-57603dee-0365-4f30-bb54-c733dfad2509.jpg)
 
 
 ![Captura de pantalla 2022-11-06 221748](https://user-images.githubusercontent.com/109297564/200195647-d402c04a-06b1-4564-8a8c-1722eada8129.jpg)
