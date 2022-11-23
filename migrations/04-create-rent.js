@@ -15,6 +15,14 @@ module.exports = {
         references: {
           model: 'usuario',
           key: 'id'
+        }},
+        articleId: {
+          type: Sequelize.INTEGER,
+          references: {
+            model: 'articles',
+            key:'id'
+          }
+
         },
         createdAt: {
           allowNull: false,
@@ -24,7 +32,7 @@ module.exports = {
           allowNull: false,
           type: Sequelize.DATE
         }
-      },
+      
     });
   },
   async down(queryInterface, Sequelize) {

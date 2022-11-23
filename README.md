@@ -22,9 +22,7 @@ En primer lugar crearemos un index.js donde crearemos la base del proyecto y ser
 A partir de aqui y comenzaremos a crear lo que sera nuestra base de datos.
 Crearemos los modelos que una vez los migremos a nuestra base de datos seran las tablas donde alojaremos todos nuestros datos (seeders).
 
-
 ![Captura de pantalla 2022-11-23 100355](https://user-images.githubusercontent.com/109297564/203507282-57603dee-0365-4f30-bb54-c733dfad2509.jpg)
-
 
 ![Captura de pantalla 2022-11-06 221748](https://user-images.githubusercontent.com/109297564/200195647-d402c04a-06b1-4564-8a8c-1722eada8129.jpg)
 
@@ -33,7 +31,6 @@ Como vemos en las imagenes de arriba, por un lado esta la carpeta models con tod
 Una vez ya creados los modelos pasaremos a migrarlos a la base datos, donde se convertiran en las tablas.
 
 ![Captura de pantalla 2022-11-23 095915](https://user-images.githubusercontent.com/109297564/203506625-abab228b-f744-4e03-b8df-2733c1d2d33e.jpg)
-
 
 Como vemos en la imagen en las migraciones encontraremos lo que habra dentro de la tabla, en este caso solo tiene un id, pero también podriamos encontrar, nombre, titulo de pelicula, etc
 
@@ -117,9 +114,15 @@ _**Borrar una serie**_
 **##ENDPOINTS de alquileres**
 
 router.post('/movie', isValidUser(), RentController.RentMovie)
+(Pasamos por el body {"usuarioId":9,
+"articleId":5
+})
 _**Alquilar una película**_
 
 router.post('/serie', isValidUser(), RentController.RentSerie)
+(Pasamos por el body {"usuarioId":9,
+"articleId":5
+})
 _**Alquilar una serie**_
 
 router.get('/', isValidRole("admin"), RentController.getAll)
@@ -165,7 +168,6 @@ Para ello cambiaremos el archivo config.json poniendo el puerto, el host, y la d
 Y por último en estas dos imágenes vemos como quedaria nuestra base de datos en railway.
 ![Captura de pantalla 2022-11-15 163127](https://user-images.githubusercontent.com/109297564/201959930-72a3f41b-7ba2-4c3d-96e7-848622802ac2.jpg)
 ![Captura de pantalla 2022-11-23 100451](https://user-images.githubusercontent.com/109297564/203507576-024fe85b-67b9-40e1-bb28-daff988155ae.jpg)
-
 
 Para finalizar dejamos, los comandos básicos, y los ENDPOINTS realizados para poder realizar el proyecto
 

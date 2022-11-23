@@ -12,12 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
                  rent.belongsTo(models.usuario);
-                 rent.hasMany(models.usuario);
+                rent.belongsTo(models.article);
     }
   }
   rent.init({
-    type: DataTypes.DATE
-  }, {
+    usuarioId: DataTypes.INTEGER,
+    articleId: DataTypes.INTEGER  }, {
     sequelize,
     modelName: 'rent',
   });
