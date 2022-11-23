@@ -57,4 +57,5 @@ RentController.getAll = (req, res) => {
 
 };
 
+
 module.exports = RentController;
