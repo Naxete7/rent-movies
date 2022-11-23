@@ -7,10 +7,10 @@ const RentController = require('../controllers/RentController');
 const isValidUser = require('../middlewares/auth')
 
 //Alquilar una película
-router.post('/movie', isValidUser, RentController.RentMovie)
+router.post('/movie',isValidUser,RentController.RentMovie)
 
 //Alquilar una serie
-router.post('/serie', isValidUser, RentController.RentSerie)
+router.post('/serie',isValidUser,RentController.RentSerie)
 
 //Ver todos los Alquileres
 router.get('/', RentController.getAll)
