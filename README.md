@@ -170,7 +170,8 @@ Para ello cambiaremos el archivo config.json poniendo el puerto, el host, y la d
 
 Y por último en estas dos imágenes vemos como quedaria nuestra base de datos en railway.
 ![Captura de pantalla 2022-11-15 163127](https://user-images.githubusercontent.com/109297564/201959930-72a3f41b-7ba2-4c3d-96e7-848622802ac2.jpg)
-![Captura de pantalla 2022-11-15 163144](https://user-images.githubusercontent.com/109297564/201959942-f03648dd-bf2d-4d81-a759-b332ff5cbaa2.jpg)
+![Captura de pantalla 2022-11-23 100451](https://user-images.githubusercontent.com/109297564/203507576-024fe85b-67b9-40e1-bb28-daff988155ae.jpg)
+
 
 Para finalizar dejamos, los comandos básicos, y los ENDPOINTS realizados para poder realizar el proyecto
 
