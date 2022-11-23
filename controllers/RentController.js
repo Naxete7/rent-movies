@@ -99,7 +99,7 @@ RentController.getAll = (req, res) => {
     var condition = type ? { type: { [Op.like]: `%${type}%` } } : null;
 
 
-  rent.findAll({})
+  rents.findAll({})
     .then(data => {
       res.send(data);
     })

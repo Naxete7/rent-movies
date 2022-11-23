@@ -26,7 +26,7 @@ UsuarioController.getAll = (req, res) => {
 UsuarioController.getUsuarioByEmail = async (req, res) => {
     try {
         let email = req.params.email
-        let res = await usuario.findOne({
+        let resp = await usuario.findOne({
             where: { email: email }
         })
             .then(resp => {
