@@ -73,9 +73,6 @@ _**Mostrar películas por título**_
 router.get('/rank/:rank', MovieController.getByRank);
 _**Mostrar películas por ranking**_
 
-router.post('/', MovieController.create);
-_**Crear una película**_
-
 router.put('/:id', MovieController.update);
 _**Modificar una película**_
 
@@ -107,9 +104,6 @@ _**Mostrar series que se hayan hecho en el cine**_
 
 router.get('/episode\*7\*days/:espisode_7_days', SerieController.get7Days)
 **Mostrar series que estrenen capítulo en los proximos 7 dias**
-
-router.post('/', SerieController.create);
-_**Crear una serie**_
 
 router.put('/:id', SerieController.update);
 _**Modificar una serie**_
@@ -212,9 +206,6 @@ _**Mostrar películas por título**_
 router.get('/rank/:rank', MovieController.getByRank);
 _**Mostrar películas por ranking**_
 
-router.post('/', MovieController.create);
-_**Crear una película**_
-
 router.put('/:id', MovieController.update);
 _**Modificar una película**_
 
@@ -246,9 +237,6 @@ _**Mostrar series que se hayan hecho en el cine**_
 
 router.get('/episode\*7\*days/:espisode_7_days', SerieController.get7Days)
 **Mostrar series que estrenen capítulo en los proximos 7 dias**
-
-router.post('/', SerieController.create);
-_**Crear una serie**_
 
 router.put('/:id', SerieController.update);
 _**Modificar una serie**_
