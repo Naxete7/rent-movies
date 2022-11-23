@@ -156,6 +156,7 @@ router.post('/signup', AuthController.signUp); **REGISTRO DE UN USUARIO NUEVO**
 "email": "alexlopez@gmail.com",
 "password":"alex123",
 })
+
 Una vez ya realizado todo esto y para comprobar que nuestra base de datos funciona correctamente, y podemos utilizar los endpoints para buscar lo que queramos utilizaremos el programa Postman para realizar esas consultas.
 
 ![Captura de pantalla 2022-11-15 163034](https://user-images.githubusercontent.com/109297564/201959412-1b0c8d1a-3f35-40ba-8fbd-7aafc62002ed.jpg)
