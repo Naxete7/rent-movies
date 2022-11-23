@@ -252,9 +252,15 @@ _**Borrar una serie**_
 **##ENDPOINTS de alquileres**
 
 router.post('/movie', isValidUser(), RentController.RentMovie)
+(Pasamos por el body {"usuarioId":9,
+"articleId":5
+})
 _**Alquilar una película**_
 
 router.post('/serie', isValidUser(), RentController.RentSerie)
+(Pasamos por el body {"usuarioId":9,
+"articleId":5
+})
 _**Alquilar una serie**_
 
 router.get('/', isValidRole("admin"), RentController.getAll)
