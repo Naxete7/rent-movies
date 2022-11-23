@@ -19,11 +19,11 @@ module.exports = (req, res, next) => {
                 res.status(500).json({ msg: "Ha ocurrido un problema al decodificar el token", err });
             } else {
                 
-                usuario.findByPk(decoded.usuario.id, { include: "rols" }).then(usuario => {
+                usuario.findByPk(decoded.usuario.id.then(usuario => {
                     
                     req.usuario = usuario;
                     next();
-                });
+                }));
             }
 
         })

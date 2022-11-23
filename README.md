@@ -54,83 +54,83 @@ Y para que tanto el archivo router.js como los views funcionen, tenemos que crea
 
 ![Captura de pantalla 2022-11-15 162854](https://user-images.githubusercontent.com/109297564/201958993-586ebfe7-6bd3-410b-a40c-338b13e1c0d0.jpg)
 
-ENDPOINTS REALIZADOS
+ENDPOINTS
 
 **##End-points CRUD para peliculas**
 
-router.get('/', MovieController.getAll);
+router.get('movies/', MovieController.getAll);
 _**Mostrar todas las películas**_
 
-router.get('/:id', MovieController.getById);
+router.get('/movies/:id', MovieController.getById);
 _**Mostrar películas por Id**_
 
-router.get('/title/:title', MovieController.getByTitle);
+router.get('movies/title/:title', MovieController.getByTitle);
 _**Mostrar películas por título**_
 
-router.get('/rank/:rank', MovieController.getByRank);
+router.get('movies//rank/:rank', MovieController.getByRank);
 _**Mostrar películas por ranking**_
 
-router.put('/:id', MovieController.update);
+router.put('movies/:id', MovieController.update);
 _**Modificar una película**_
 
-router.delete('/', MovieController.deleteAll);
+router.delete('movies/', MovieController.deleteAll);
 _**Borrar todas las películas**_
 
-router.delete('/:id', MovieController.delete);
+router.delete('movies/:id', MovieController.delete);
 _**Borrar una película**_
 
 **##End-points CRUD para series**
 
-router.get('/', SerieController.getAll);
+router.get('series/', SerieController.getAll);
 _**Mostrar todas las series**_
 
-router.get('/:id', SerieController.getById);
+router.get('series/:id', SerieController.getById);
 _**Mostrar series por Id**_
 
-router.get('/title/:title', SerieController.getByTitle);
+router.get('series/title/:title', SerieController.getByTitle);
 _**Mostrar series por titulo**_
 
-router.get('/rank/:rank', SerieController.getTopSerie);
+router.get('series/rank/:rank', SerieController.getTopSerie);
 _**Mostrar series por ranking**_
 
-router.get('/theater/:theater', SerieController.getSerieTheater);
+router.get('series/theater/:theater', SerieController.getSerieTheater);
 _**Mostrar series que se hayan hecho en el teatro**_
 
-router.get('/cinema/:cinema', SerieController.getSerieCinema);
+router.get('series/cinema/:cinema', SerieController.getSerieCinema);
 _**Mostrar series que se hayan hecho en el cine**_
 
-router.get('/episode\*7\*days/:espisode_7_days', SerieController.get7Days)
+router.get('series/episode\*7\*days/:espisode_7_days', SerieController.get7Days)
 **Mostrar series que estrenen capítulo en los proximos 7 dias**
 
-router.put('/:id', SerieController.update);
+router.put('series/:id', SerieController.update);
 _**Modificar una serie**_
 
-router.delete('/', SerieController.deleteAll);
+router.delete('series/', SerieController.deleteAll);
 _**Borrar todas las series**_
 
-router.delete('/:id', SerieController.delete);
+router.delete('series/:id', SerieController.delete);
 _**Borrar una serie**_
 
 **##ENDPOINTS de alquileres**
 
-router.post('/movie', RentController.RentMovie)
+router.post('rent/movie', RentController.RentMovie)
 (Pasamos por el body {"usuarioId":9,
 "articleId":5
 })
 _**Alquilar una película**_
 
-router.post('/serie', RentController.RentSerie)
+router.post('rent/serie', RentController.RentSerie)
 (Pasamos por el body {"usuarioId":9,
 "articleId":5
 })
 _**Alquilar una serie**_
 
-router.get('/', RentController.getAll)
+router.get('rent/', RentController.getAll)
 _**Todos los Alquileres**_
 
 **##ENDPOINTS de los usuarios**
 
-router.get("/", UsuarioController.getAll);
+router.get("usuarios/", UsuarioController.getAll);
 _**Mostrar todos los usuarios**_
 
 router.get("/usuarios/:email", UsuarioController.getUsuarioByEmail);
@@ -140,7 +140,7 @@ _**Mostrar usuarios por mail**_
 
 _**login y registro**_
 
-router.post('/signin', AuthController.signIn); **LOGIN**
+router.post('auth/signin', AuthController.signIn); **LOGIN**
 (para poder logear y comprobar que el usuario esta registrado en nuestra base de datos, le pasaremos por body:
 
 {
@@ -150,7 +150,7 @@ router.post('/signin', AuthController.signIn); **LOGIN**
 
 )
 
-router.post('/signup', AuthController.signUp); **REGISTRO DE UN USUARIO NUEVO**
+router.post('auth/signup', AuthController.signUp); **REGISTRO DE UN USUARIO NUEVO**
 (para poder crear un nuevo usuario, le pasamos por body un objeto Json con los siguientes datos:
 {"nombre":"Alex Lopez",
 "email": "alexlopez@gmail.com",
@@ -197,79 +197,79 @@ ENDPOINTS
 
 **##End-points CRUD para peliculas**
 
-router.get('/', MovieController.getAll);
+router.get('movies/', MovieController.getAll);
 _**Mostrar todas las películas**_
 
-router.get('/:id', MovieController.getById);
+router.get('/movies/:id', MovieController.getById);
 _**Mostrar películas por Id**_
 
-router.get('/title/:title', MovieController.getByTitle);
+router.get('movies/title/:title', MovieController.getByTitle);
 _**Mostrar películas por título**_
 
-router.get('/rank/:rank', MovieController.getByRank);
+router.get('movies//rank/:rank', MovieController.getByRank);
 _**Mostrar películas por ranking**_
 
-router.put('/:id', MovieController.update);
+router.put('movies/:id', MovieController.update);
 _**Modificar una película**_
 
-router.delete('/', MovieController.deleteAll);
+router.delete('movies/', MovieController.deleteAll);
 _**Borrar todas las películas**_
 
-router.delete('/:id', MovieController.delete);
+router.delete('movies/:id', MovieController.delete);
 _**Borrar una película**_
 
 **##End-points CRUD para series**
 
-router.get('/', SerieController.getAll);
+router.get('series/', SerieController.getAll);
 _**Mostrar todas las series**_
 
-router.get('/:id', SerieController.getById);
+router.get('series/:id', SerieController.getById);
 _**Mostrar series por Id**_
 
-router.get('/title/:title', SerieController.getByTitle);
+router.get('series/title/:title', SerieController.getByTitle);
 _**Mostrar series por titulo**_
 
-router.get('/rank/:rank', SerieController.getTopSerie);
+router.get('series/rank/:rank', SerieController.getTopSerie);
 _**Mostrar series por ranking**_
 
-router.get('/theater/:theater', SerieController.getSerieTheater);
+router.get('series/theater/:theater', SerieController.getSerieTheater);
 _**Mostrar series que se hayan hecho en el teatro**_
 
-router.get('/cinema/:cinema', SerieController.getSerieCinema);
+router.get('series/cinema/:cinema', SerieController.getSerieCinema);
 _**Mostrar series que se hayan hecho en el cine**_
 
-router.get('/episode\*7\*days/:espisode_7_days', SerieController.get7Days)
+router.get('series/episode\*7\*days/:espisode_7_days', SerieController.get7Days)
 **Mostrar series que estrenen capítulo en los proximos 7 dias**
 
-router.put('/:id', SerieController.update);
+router.put('series/:id', SerieController.update);
 _**Modificar una serie**_
 
-router.delete('/', SerieController.deleteAll);
+router.delete('series/', SerieController.deleteAll);
 _**Borrar todas las series**_
 
-router.delete('/:id', SerieController.delete);
+router.delete('series/:id', SerieController.delete);
 _**Borrar una serie**_
 
 **##ENDPOINTS de alquileres**
 
-router.post('/movie', RentController.RentMovie)
+router.post('rent/movie', RentController.RentMovie)
 (Pasamos por el body {"usuarioId":9,
 "articleId":5
 })
 _**Alquilar una película**_
 
-router.post('/serie', RentController.RentSerie)
+router.post('rent/serie', RentController.RentSerie)
 (Pasamos por el body {"usuarioId":9,
 "articleId":5
 })
 _**Alquilar una serie**_
 
-router.get('/', RentController.getAll)
+router.get('rent/', RentController.getAll)
 _**Todos los Alquileres**_
 
 **##ENDPOINTS de los usuarios**
 
-router.get("/", UsuarioController.getAll);
+router.get("usuarios/", UsuarioController.getAll);
 _**Mostrar todos los usuarios**_
 
 router.get("/usuarios/:email", UsuarioController.getUsuarioByEmail);
@@ -279,7 +279,7 @@ _**Mostrar usuarios por mail**_
 
 _**login y registro**_
 
-router.post('/signin', AuthController.signIn); **LOGIN**
+router.post('auth/signin', AuthController.signIn); **LOGIN**
 (para poder logear y comprobar que el usuario esta registrado en nuestra base de datos, le pasaremos por body:
 
 {
@@ -289,7 +289,7 @@ router.post('/signin', AuthController.signIn); **LOGIN**
 
 )
 
-router.post('/signup', AuthController.signUp); **REGISTRO DE UN USUARIO NUEVO**
+router.post('auth/signup', AuthController.signUp); **REGISTRO DE UN USUARIO NUEVO**
 (para poder crear un nuevo usuario, le pasamos por body un objeto Json con los siguientes datos:
 {"nombre":"Alex Lopez",
 "email": "alexlopez@gmail.com",
